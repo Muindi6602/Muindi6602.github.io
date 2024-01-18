@@ -1,4 +1,4 @@
-WhatsApp MD User Bot
+*WhatsApp MD User Bot*
 A simple WhatsApp User bot.
 
-Setup
+*_Setup_*
