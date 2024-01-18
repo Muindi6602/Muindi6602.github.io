@@ -1,39 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muindi-Bot-Md</title>
-    <style>
-        /* Add your custom styles here */
-        a {
-            color: blue;
-            font-weight: bold;
-            text-decoration: underline;
+    <meta content="viewport">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Muindi-Bot-Md</title>
+        <style>
+            /* Add your custom styles here */
+            a {
+                color: blue;
+                font-weight: bold;
+                text-decoration: underline;
+            }
+            .red-link {
+                color: red;
+                font-weight: bold;
+                text-decoration: underline;
+            }
+            .footer {
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                background-color: #f8f8f8;
+                color: #333;
+                padding: 1px;
+                width: 100%;
+                text-align: right;
+            }
+            .notification {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: #007bff;
+        color: white;
+        border-radius: 10px;
+        display: none;
+    }
+
+    @keyframes blink {
+        50% {
+            opacity: 0;
         }
-        .red-link {
-            color: red;
-            font-weight: bold;
-            text-decoration: underline;
-        }
-        .footer {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            background-color: #f8f8f8;
-            color: #333;
-            padding: 1px;
-            width: 100%;
-            text-align: right;
-        }
+    }
+       
     </style>
+
+<link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <header><marquee behavior="scroll" direction="left">Muindi WhatsApp Bot MD Deployment</marquee></header>
 
-    <header>
-        <h1>Muindi-Bot-Md</h1>
-        <h2>Create a moded bot for your WhatsApp as follows.</h2>
-    </header>
     <h3>⚙️ Setup.</h3>
     <ol>
         <li>Click <a href="https://qr-hazel-alpha.vercel.app/session" target="_blank">SCAN</a> and scan the QR code through the "WhatsApp Linked Devices" option in your WhatsApp app.</li>
@@ -51,7 +70,7 @@
         <br>
         <li>Now <a class="red-link" href="https://qr-hazel-alpha.vercel.app/heroku" target="_blank">DEPLOY</a>.</li>
     </ol>
-    <h5>2. Deploy on Koyeb.</h5>
+    <h4>2. Deploy on Koyeb.</h4>
     <ol>
         <li>You can sign up in <a href="app.koyeb.com/auth/signup" target="_blank">KOYEB</a>.</li>
         <br>
@@ -62,22 +81,36 @@
         <li>Now <a class="red-link" href="https://github.com/lyfe00011/whatsapp-bot-md/fork" target="_blank">DEPLOY.</a></li>
     </ol>
     <br>
-    <h6>
-        <li> 
-            <a onclick="displayMpesaNumber()">Buy Me Coffee ☕</a> 
+    <h4> 
+        <li>
+            <a href="#" onclick="displayMpesaNumber(); return false;">Buy Me Coffee ☕</a>
         </li>
-        <script> 
+        
+        <script>
             function displayMpesaNumber() {
-                alert("Mpesa 0115783375");
+                var mpesaNumber = "0115783375";
+                var alertMessage = "Mpesa: " + mpesaNumber;
+        
+                // Create a div for the notification
+                var notificationDiv = document.createElement('div');
+                notificationDiv.setAttribute('class', 'notification');
+                notificationDiv.textContent = alertMessage;
+        
+                // Append the notification div to the body
+                document.body.appendChild(notificationDiv);
+        
+                // Show the notification
+                notificationDiv.style.display = 'block';
+        
+                // Set a timeout to remove the notification after 10 seconds
+                setTimeout(function () {
+                    document.body.removeChild(notificationDiv);
+                }, 10000); // 10000 milliseconds (10 seconds)
             }
         </script>
         <li>
             Get me on Social Media; <a href="https://wa.me/254115783375" target="_blank">WhatsApp🪀.</a>
         </li>
-    </h6>
-    <br>
-    <div class="footer">
-        @muindi2024
-    </div>
+    </h4>
 </body>
 </html>
