@@ -1,0 +1,31 @@
+body {
+    background-color: skyblue;
+}
+
+header {
+    font-family: 'Times New Roman';
+    letter-spacing: 20px;
+    color: green;
+    border-radius: 20px;
+    border: 5px;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+div{
+    color: blue;
+    background-color: grey;
+    width: 80%;
+    height: 80px;
+    cursor: pointer;
+    align-items: top;
+    align-content: center;
+    margin: 200px;
+    margin-top: auto;
+
+}
+
+.div:hoover {
+    color: yellow;
+
+}
