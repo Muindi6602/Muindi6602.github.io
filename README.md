@@ -1,2 +1,4 @@
-Muindi-Bot-Md 
-muindi66602.github.io
+WhatsApp MD User Bot
+A simple WhatsApp User bot.
+
+Setup
