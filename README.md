@@ -26,7 +26,7 @@ Create a moded bot for your WhatsApp as follows.
   
 - Get your Koyeb API Key [Here](https://app.koyeb.com/account/api) (Copy your API Key).
   
-- Now [DEPLOY](https://github.com/lyfe00011/whatsapp-bot-md/fork).
+- Now [DEPLOY](https://qr-hazel-alpha.vercel.app/koyeb).
 
 ### Buy Me Coffee ☕
 
