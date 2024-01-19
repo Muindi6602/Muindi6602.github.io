@@ -90,88 +90,71 @@
 </div><br>
     3. Install wget proot and git:
     <div class="code-container">
-        <span class="copy-icon" onclick="copyCode()">📋 Copy</span>
         <pre><code id="codeSnippet">apt-get install wget proot git -y</code></pre>
       </div><br>
     4. Go to HOME folder in Termux:
     <div class="code-container">
-        <span class="copy-icon" onclick="copyCode()">📋 Copy</span>
         <pre><code id="codeSnippet">cd</code></pre>
       </div><br>
     5. Fetch the script from the github:
     <div class="code-container">
-        <span class="copy-icon" onclick="copyCode()">📋 Copy</span>
         <pre><code id="codeSnippet">git clone https://github.com/MFDGaming/ubuntu-in-termux.git</code></pre>
       </div><br>
     6. Go to the script directory:
     <div class="code-container">
-        <span class="copy-icon" onclick="copyCode()">📋 Copy</span>
         <pre><code id="codeSnippet">cd ubuntu-in-termux</code></pre>
       </div><br>
     7. Give execution permission to the script:
     <div class="code-container">
-        <span class="copy-icon" onclick="copyCode()">📋 Copy</span>
         <pre><code id="codeSnippet">chmod +x ubuntu.sh</code></pre>
       </div><br>
     8. Execute the script: (Try any between the two codes. on will work)
     <div class="code-container">
-        <span class="copy-icon" onclick="copyCode()">📋 Copy</span>
         <pre><code id="codeSnippet">./ubuntu.sh -y</code></pre>
       </div>
     OR
     <div class="code-container">
-        <span class="copy-icon" onclick="copyCode()">📋 Copy</span>
         <pre><code id="codeSnippet">/ubuntu.sh -y</code></pre>
       </div><br>
     9. start ubuntu:
     <div class="code-container">
-        <span class="copy-icon" onclick="copyCode()">📋 Copy</span>
         <pre><code id="codeSnippet">./startubuntu.sh</code></pre>
       </div><br>
     10. Install Neofetch in Ubuntu shell:
     <div class="code-container">
-        <span class="copy-icon" onclick="copyCode()">📋 Copy</span>
         <pre><code id="codeSnippet">apt-get install neofetch</code></pre>
       </div><br>
     11. Run the update again to activate new ubuntu files:
     <div class="code-container">
-        <span class="copy-icon" onclick="copyCode()">📋 Copy</span>
         <pre><code id="codeSnippet">apt -y update && apt -y upgrade</code></pre>
       </div><br>
     12. Install git,ffmpeg, and curl
     <div class="code-container">
-        <span class="copy-icon" onclick="copyCode()">📋 Copy</span>
         <pre><code id="codeSnippet">apt -y install git ffmpeg curl</code></pre>
       </div><br>
     13. Install node.js:
     <div class="code-container">
-        <span class="copy-icon" onclick="copyCode()">📋 Copy</span>
         <pre><code id="codeSnippet">curl -fsSl https://deb.nodesource.com/setup_lts.x | bash - && apt -y install nodejs
         </code></pre>
       </div><br>
     14. Install yarn:
     <div class="code-container">
-        <span class="copy-icon" onclick="copyCode()">📋 Copy</span>
         <pre><code id="codeSnippet">npm install -g yarn</code></pre>
       </div><br>
     15. Install pm2
     <div class="code-container">
-        <span class="copy-icon" onclick="copyCode()">📋 Copy</span>
         <pre><code id="codeSnippet">yarn global add pm2</code></pre>
       </div><br>
     16. Clone the repository:
     <div class="code-container">
-        <span class="copy-icon" onclick="copyCode()">📋 Copy</span>
         <pre><code id="codeSnippet">git clone https://github.com/lyfe00011/whatsapp-bot-md YourbotName cd YourbotName</code></pre>
       </div><br>
     17. Install packages and network concurrency:
     <div class="code-container">
-        <span class="copy-icon" onclick="copyCode()">📋 Copy</span>
         <pre><code id="codeSnippet">yarn install --network-concurrency 1</code></pre>
       </div><br>
     18. Enter Environment Variables: Copy-paste the lines below and replace the variable values with yours:
     <div class="code-container">
-        <span class="copy-icon" onclick="copyCode()">📋 Copy</span>
         <pre><code id="codeSnippet">echo "SESSION_ID = Session_Id
             PREFIX = .
             STICKER_PACKNAME = MuindiBot
@@ -197,12 +180,10 @@
     <br><br>
     20. Start the bot:
     <div class="code-container">
-        <span class="copy-icon" onclick="copyCode()">📋 Copy</span>
         <pre><code id="codeSnippet">pm2 start . --name YourbotName --attach --time</code></pre>
       </div><br>
     21. In Progress 20 above, you can replace ( pm2 start . --name botName --attach --time) with this to prevent the bot from stopping even after closing the app:
     <div class="code-container">
-        <span class="copy-icon" onclick="copyCode()">📋 Copy</span>
         <pre><code id="codeSnippet">nohup pm2 start . --name YourbotName --attach --time</code></pre>
       </div>
     </ol>
