@@ -29,3 +29,17 @@ div{
     color: yellow;
 
 }
+.code-container {
+    position: relative;
+    border: 1px solid #ddd;
+    padding: 5px;
+    margin-bottom: 5px;
+    background-color: grey;
+  }
+
+  .copy-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+  }
