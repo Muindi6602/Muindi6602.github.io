@@ -64,3 +64,7 @@ div:hover {
 .copy-link-input:hover {
     background-color: #cccccc;
 }
+.blue-text {
+        color: blue;
+}
+
