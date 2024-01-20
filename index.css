@@ -29,17 +29,42 @@ div{
     color: yellow;
 
 }
-.code-container {
-    position: relative;
-    border: 1px solid #ddd;
-    padding: 5px;
-    margin-bottom: 5px;
-    background-color: grey;
-  }
 
-  .copy-icon {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    cursor: pointer;
-  }
+.copy-link {
+            --height:36px;
+
+            display: flex;
+            max-width: 250px;
+
+        }
+
+        .copy-link-input {
+            flex-grow: 1;
+            padding: 0 8px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-right: none;
+            outline: none;
+        }
+
+        .copy-link-input:hover {
+            background: #eeeeee;
+        }
+
+        .copy-link-input {
+            flex-shrink: 0;
+            width: var(--height);
+            height: var(--height);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #dddddd;
+            color: #333333;
+            outline: none;
+            border: 1px solid #cccccc;
+            cursor: pointer;
+        }
+
+        .copy-link-input:hover {
+            background-color: #cccccc;
+        }
