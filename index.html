@@ -193,7 +193,16 @@
 
         </button>
     </div><br>
-    13. Install node.js:
+    13. Remove pre-installed node.js:
+        <br>
+    <div class="copy-link">
+        <input type="text" class="copy-link-input" value="apt -y remove nodejs" readonly>
+        <button type="button" class="copy-link-button">
+            <span class="material-icons">content_copy</span>
+
+        </button>
+    </div><br>
+    14. Noe Re-Install node.js:
     <br>
     <div class="copy-link">
         <input type="text" class="copy-link-input" value="curl -fsSl https://deb.nodesource.com/setup_lts.x | bash - && apt -y install nodejs" readonly>
@@ -202,7 +211,7 @@
 
         </button>
     </div><br>
-    14. Install yarn:
+    15. Install yarn:
     <br>
     <div class="copy-link">
         <input type="text" class="copy-link-input" value="npm install -g yarn" readonly>
@@ -211,7 +220,7 @@
 
         </button>
     </div><br>
-    15. Install pm2:
+    16. Install pm2:
     <br>
     <div class="copy-link">
         <input type="text" class="copy-link-input" value="yarn global add pm2" readonly>
@@ -220,7 +229,7 @@
 
         </button>
     </div><br>
-    16. Clone the repository:
+    17. Clone the repository:
     <br>
     <div class="copy-link">
         <input type="text" class="copy-link-input" value="git clone https://github.com/lyfe00011/whatsapp-bot-md YourbotName cd YourbotName" readonly>
@@ -229,7 +238,7 @@
 
         </button>
     </div><br>
-    17. Install packages and network concurrency:
+    18. Install packages and network concurrency:
     <br>
     <div class="copy-link">
         <input type="text" class="copy-link-input" value="yarn install --network-concurrency 1" readonly>
@@ -238,13 +247,13 @@
 
         </button>
     </div><br>
-    18. Enter Environment Variables: Copy-paste the lines below and replace the variable values with yours:
+    19. Enter Environment Variables: Copy-paste the lines below and replace the variable values with yours:
     <ol><br>
         echo "SESSION_ID = Session_Id<br>PREFIX = .<br>STICKER_PACKNAME = MuindiBot<br>ALWAYS_ONLINE = true<br>RMBG_KEY = null<br>LANGUAG = en<br>WARN_LIMIT = 1<br>FORCE_LOGOUT = false<br>BRAINSHOP = 159501,6pq8dPiYt7PdqHz3<br>MAX_UPLOAD = 200<br>REJECT_CALL = true<br>SUDO = 254115783375<br>TZ = Africa/Nairobi<br>VPS = true<br>AUTO_STATUS_VIEW = no-dl<br>SEND_READ = true<br>AJOIN = true<br>DISABLE_START_MESSAGE = false<br>PERSONAL_MESSAGE = null" > config.env
     </ol><br>
-    19. Save the above by clicking Ctrl + O, then press Enter.
+    20. Save the above by clicking Ctrl + O, then press Enter.
     <br><br>
-    20. Start the Bot:
+    21. Start the Bot:
     <br>
     <div class="copy-link">
         <input type="text" class="copy-link-input" value="pm2 start . --name YourbotName --attach --time" readonly>
@@ -253,7 +262,7 @@
 
         </button>
     </div><br>
-    21. In Progress 20 above, you can replace ( pm2 start . --name YourbotName --attach --time) with this to prevent the bot from stopping even after closing the app:
+    22. In Progress 20 above, you can replace ( pm2 start . --name YourbotName --attach --time) with this to prevent the bot from stopping even after closing the app:
     <br>
     <div class="copy-link">
         <input type="text" class="copy-link-input" value="nohup pm2 start . --name YourbotName --attach --time" readonly>
