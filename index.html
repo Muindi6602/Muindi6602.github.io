@@ -232,10 +232,10 @@
 
         </button>
     </div><br>
-    18. Clone the repository and install packages:
-    <br>
+    18. Clone the repository and install packages:(copy & paste the whole code replacing "yourbotname" with your actual bot name):
+    <br><br>
         <ol>
-        git clone https://github.com/lyfe00011/whatsapp-bot-md yourbotName cd yourbotName <br> yarn install --network-concurrency 1
+        git clone https://github.com/lyfe00011/whatsapp-bot-md yourbotname cd yourbotname <br>  yarn install --network-concurrency 1
     <br><br></ol>
     19. Enter Environment Variables: Copy-paste the lines below and replace the variable values with yours:
     <ol><br>
@@ -246,21 +246,12 @@
     21. Start the Bot:
     <br>
     <div class="copy-link">
-        <input type="text" class="copy-link-input" value="pm2 start . --name YourbotName --attach --time" readonly>
+        <input type="text" class="copy-link-input" value="pm2 start . --name yourbotname --attach --time" readonly>
         <button type="button" class="copy-link-button">
             <span class="material-icons">content_copy</span>
 
         </button>
     </div><br>
-    22. In Progress 20 above, you can replace ( pm2 start . --name YourbotName --attach --time) with this to prevent the bot from stopping even after closing the app:
-    <br>
-    <div class="copy-link">
-        <input type="text" class="copy-link-input" value="nohup pm2 start . --name YourbotName --attach --time" readonly>
-        <button type="button" class="copy-link-button">
-            <span class="material-icons">content_copy</span>
-
-        </button>
-    </div>
 
     <script>
         document.querySelectorAll(".copy-link").forEach(copyLinkContainer => {
