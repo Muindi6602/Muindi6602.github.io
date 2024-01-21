@@ -30,7 +30,7 @@ Create a moded bot for your WhatsApp as follows.
 
 ### Buy Me Coffee ☕
 
-- [Buy Me Coffee ☕](#) (Mpesa 0115783375)
+-  (Mpesa 0115783375)
 
 ### Get me on Social Media
 
