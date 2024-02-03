@@ -67,4 +67,6 @@ div:hover {
 .blue-text {
         color: blue;
 }
-
+.red-link {
+    color: red;
+}
