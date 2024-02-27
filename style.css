@@ -70,3 +70,8 @@ div:hover {
 .red-link {
     color: red;
 }
+.footer {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 10px;
+}
