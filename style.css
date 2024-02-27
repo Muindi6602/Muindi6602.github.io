@@ -1,8 +1,8 @@
-body {
+.body {
     background-color: skyblue;
 }
 
-header {
+.header {
     font-family: 'Times New Roman';
     letter-spacing: 20px;
     color: green;
@@ -12,7 +12,7 @@ header {
     background-color: white;
 }
 
-div {
+.div {
     color: blue;
     background-color: grey;
     width: auto;
@@ -24,7 +24,7 @@ div {
     margin-top: auto;
 }
 
-div:hover {
+.div:hover {
     color: yellow;
 }
 
@@ -73,5 +73,9 @@ div:hover {
 .footer {
     background-color: #f4f4f4;
     text-align: center;
+    padding: 10px;
+    bottom: 0;
+    left: 0;
+    right: 0;
     padding: 10px;
 }
