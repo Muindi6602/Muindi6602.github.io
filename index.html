@@ -274,32 +274,12 @@
             <span class="material-icons">content_copy</span>
 
         </button>
-    </div><br>
-
-<script>
-    document.querySelectorAll(".copy-link").forEach(copyLinkContainer => {
-        const inputField = copyLinkContainer.querySelector(".copy-link-input");
-        const copyButton = copyLinkContainer.querySelector(".copy-link-button");
-
-        inputField.addEventListener("focus", () => inputField.select());
-
-        copyButton.addEventListener("click", () => {
-            const text = inputField.value;
-            inputField.select();
-            navigator.clipboard.writeText(text);
-
-            // Apply the "blue-text" class to change the text color
-            inputField.classList.add("blue-text");
-
-            inputField.value = "Copied Successfully! 📋";
-            setTimeout(() => {
-                inputField.value = text;
-                // Remove the "blue-text" class after resetting the value
-                inputField.classList.remove("blue-text");
-            }, 1000);
-        });
-    });
-</script>
+        
+    </div>
+    
+    
+    
+    <br>
         <br><br>
         <h3> [2.] Suhail Tech Bot (Heroku Deployment)</h3>
         <h3>⚙️ Setup.</h3>
@@ -328,30 +308,30 @@
 
         </button>
     </div>
-            <script>
-    document.querySelectorAll(".copy-link").forEach(copyLinkContainer => {
-        const inputField = copyLinkContainer.querySelector(".copy-link-input");
-        const copyButton = copyLinkContainer.querySelector(".copy-link-button");
-
-        inputField.addEventListener("focus", () => inputField.select());
-
-        copyButton.addEventListener("click", () => {
-            const text = inputField.value;
-            inputField.select();
-            navigator.clipboard.writeText(text);
-
-            // Apply the "blue-text" class to change the text color
-            inputField.classList.add("blue-text");
-
-            inputField.value = "Copied Successfully! 📋";
-            setTimeout(() => {
-                inputField.value = text;
-                // Remove the "blue-text" class after resetting the value
-                inputField.classList.remove("blue-text");
-            }, 1000);
+    <script>
+        document.querySelectorAll(".copy-link").forEach(copyLinkContainer => {
+            const inputField = copyLinkContainer.querySelector(".copy-link-input");
+            const copyButton = copyLinkContainer.querySelector(".copy-link-button");
+    
+            inputField.addEventListener("focus", () => inputField.select());
+    
+            copyButton.addEventListener("click", () => {
+                const text = inputField.value;
+                inputField.select();
+                navigator.clipboard.writeText(text);
+    
+                // Apply the "blue-text" class to change the text color
+                inputField.classList.add("blue-text");
+    
+                inputField.value = "Copied Successfully! 📋";
+                setTimeout(() => {
+                    inputField.value = text;
+                    // Remove the "blue-text" class after resetting the value
+                    inputField.classList.remove("blue-text");
+                }, 1000);
+            });
         });
-    });
-</script>
+    </script>
 
 
     <br><li> After replacing the forked repo link, paste it in the browser and Deploy without getting suspended.</li>
