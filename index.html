@@ -53,11 +53,12 @@ document.getElementById("sendSMS").addEventListener("click", function() {
     // Encode message for URL
     var encodedMessage = encodeURIComponent(message);
     // Create SMS URL with phone number and pre-filled message
-    var smsUrl = "sms:" + phoneNumber + "&body=" + encodedMessage;
+    var smsUrl = "sms:" + phoneNumber + "?body=" + encodedMessage; // Note the '?' instead of '&'
     // Redirect to SMS app
     window.location.href = smsUrl;
 });
 </script>
+
 <button id="callMe" class="btn btn-default td-btn outline white glitter-btn">Call Me</button><br><br>
 
 <script>
