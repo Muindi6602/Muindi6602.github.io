@@ -232,3 +232,26 @@ a:hover {
   background-color: white;
   color: #000;
 }
+
+.callMe.btn.btn-default.td-btn.outline.white.glitter-btn {
+  text-decoration: none;
+  width: 100px;
+  height: 40px;
+  background-color: maroon;
+  color: white;
+  text-align: center;
+  border: 1px solid gold;
+  margin: auto;
+  font-size: 20px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.callMe.btn.btn-default.td-btn.outline.white.glitter-btn:hover {
+  transform: scale(1.2);
+  transition: 0.5s;
+  background-color: white;
+  color: #000;
+}
