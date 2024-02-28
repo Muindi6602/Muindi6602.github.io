@@ -1,365 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-    <meta charset="UTF-8">
-    <meta content="viewport">
+    <link rel="stylesheet" href="style.css">
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Muindi-Bot-Md</title>
-        <style>
-            a {
-                color: blue;
-                font-weight: bold;
-                text-decoration: underline;
-            .blue-text {
-        color: blue;
-            }
-            .red-link {
-                color: red;
-                font-weight: bold;
-                text-decoration: underline;
-            }
-            .footer {
-                position: fixed;
-                right: 0;
-                bottom: 0;
-                background-color: #f8f8f8;
-                color: #333;
-                padding: 1px;
-                width: 100%;
-                text-align: right;
-            }
-            .notification {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 20px;
-        background-color: #007bff;
-        color: white;
-        border-radius: 10px;
-        display: none;
-    }
-
-    @keyframes blink {
-        50% {
-            opacity: 0;
-        }
-    }
-  
-    </style>
-
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muindi Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header><marquee behavior="scroll" direction="left">Muindi whatsapp bots in one page. enjoy them!</marquee></header>
-    <br><h2 style="color: green;">🥶 Deploy the Following Bots 🤖:</h2>
-            <ol>
-                <li> Levanter Md Bot</li>
-                <li> Suhail Tech Bot</li>
-                <li> Cyber-X Bot</li>
-                <li> Hermit-Md Bot</li>
-                <li> Raganork-Md</li>
-            </ol>
-    <h3> [1.] Levanter Bot/ lyfe00011</h3>
-    <h3>⚙️ Setup.</h3>
-    <ol>
-        <li>Click <a href="https://qr-hazel-alpha.vercel.app/session" target="_blank">SCAN</a> and scan the QR code through the "WhatsApp Linked Devices" option in your WhatsApp app.</li>
-        <br>
-        <li>You will get a session ID in WhatsApp. (Copy the Session ID only).</li>
-    </ol>
-    <br>
-    <h4>A. Deploy on Heroku</h4>
-    <ol>
-        <li>If you don't have an account on Heroku, create an account now: <a href="https://signup.heroku.com/" target="_blank">Heroku</a>.</li>
-        <br>
-        <li>If you don't have a GitHub account, sign up now: <a href="https://github.com/" target="_blank">GitHub</a>.</li>
-        <br>
-        <li><a href="https://github.com/lyfe00011/whatsapp-bot-md/fork" target="_blank">FORK</a> this repository. (Copy the forked repository link as you'll use it while deploying).</li>
-        <br>
-        <li>Now <a class="red-link" href="https://heroku.com/deploy?template=https://github.com/Muindi6602/whatsapp-bot-md" target="_blank">DEPLOY</a>.</li>
-    </ol>
-    <h4>B. Deploy on Koyeb.</h4>
-    <ol>
-        <li>You can sign up in <a href="app.koyeb.com/auth/signup" target="_blank">KOYEB</a>.</li>
-        <br>
-        <li>Get your Database URL in <a href="https://github.com/lyfe00011/whatsapp-bot-md/wiki/DATABASE_URL" target="_blank">DATABASE_URL.</a> (Copy your Database URL).</li>
-        <br>
-        <li>Get your Koyeb API Key <a href="https://app.koyeb.com/account/api" target="_blank">Here</a> (Copy your API Key).</li>
-        <br>
-        <li>Now <a class="red-link" href="https://qr-hazel-alpha.vercel.app/koyeb" target="_blank">DEPLOY.</a></li>
-    </ol>
-    <br>
-    <h4>C. Calculate Your Age <a href="https://muindi6602.github.io/muindi70/" target="_blank">Here.</a><br>
-    <h4>D. Deploy on Ubuntu (Termux):</h4><br>
-    <ol>1. First above all, install Termux Apk into your Android/ iPhone in the official store. click <a href="https://termux.en.softonic.com/android" target="_blank">Here</a> to download.
-    <br><br>
-    2. Run this command in the Termux App to update and upgrade to-date-files.
-    <br>
-    <div class="copy-link">
-        <input type="text" class="copy-link-input" value="apt-get update && apt-get upgrade -y" readonly>
-        <button type="button" class="copy-link-button">
-            <span class="material-icons">content_copy</span>
+    <header class="header-background">
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-content">
+            <img src="https://img.hotimg.com/mypic.jpeg" alt="mypic.jpeg" border="0" />
+            <h1>Hi, my name is Muindi</h1>
+            <p>Financial Annalyst | Web Developer | Accountant</p>
+        </div>
+    </header>
+    <main>
+        <section id="about">
+            <h2>~ About Me ~</h2>
+            <img src="https://img.hotimg.com/mypicc.jpeg" alt="Muindi's Profile" class="profile-photo">
+            <p>
+                Joseph Muindi is a dedicated and ambitious student currently pursuing a Bachelor of Commerce degree with a Finance Option at Machakos University. With a keen interest in finance and accounting, Joseph excels in his academic studies, consistently demonstrating a strong understanding of financial principles and analytical skills. He completed a computer packages course at Techno Springs Digital Centre, enhancing his proficiency in technology and software applications. Joseph's academic achievements, coupled with his proactive approach to learning, reflect his commitment to personal and professional development. Outside of academics, Joseph actively engages in extracurricular activities and volunteer work, showcasing his leadership abilities and commitment to community service. With a strong foundation in finance, coupled with his determination and enthusiasm, Joseph is poised to make a positive impact in the finance industry.
+            </p>
+        </section>
+        <section id="portfolio">
+            <h2>~ My Work ~</h2>
+            <div class="project" id="project1"><a href="https://muindi6602.github.io/muindi70/">WhatsApp Bots Analysis</a></div>
 
-        </button>
-    </div><br>
-    3. Install wget proot and git:
-    <br>
-    <div class="copy-link">
-        <input type="text" class="copy-link-input" value="apt-get install wget proot git -y" readonly>
-        <button type="button" class="copy-link-button">
-            <span class="material-icons">content_copy</span>
+            <div class="project" id="project2">Upcoming</div>
+            <div class="project" id="project3">Soon</div>
+            <div class="project" id="project4">Soon</div>        
+        </section>
+        <section id="contact">
+            <h2>~ Keep in Touch ~</h2>
+            <button id="sendSMS" class="btn btn-default td-btn outline white">Send me a message!</button><br><br><br>
 
-        </button>
-    </div><br>
-    4. Go to HOME folder in Termux:
-    <br>
-    <div class="copy-link">
-        <input type="text" class="copy-link-input" value="cd" readonly>
-        <button type="button" class="copy-link-button">
-            <span class="material-icons">content_copy</span>
+<script>
+document.getElementById("sendSMS").addEventListener("click", function() {
+    // Phone number to send SMS
+    var phoneNumber = "+254115783375";
+    // Message to pre-fill in the SMS body
+    var message = "Hello Joseph, I am ";
+    // Encode message for URL
+    var encodedMessage = encodeURIComponent(message);
+    // Create SMS URL with phone number and pre-filled message
+    var smsUrl = "sms:" + phoneNumber + "&body=" + encodedMessage;
+    // Redirect to SMS app
+    window.location.href = smsUrl;
+});
+</script>
+<button id="callMe" class="btn btn-default td-btn outline white glitter-btn">Call Me</button><br><br>
 
-        </button>
-    </div><br>
-    5. Fetch the script from the github: (Always remember to run command of Default "N" incase of an error):
-    <br>
-    <div class="copy-link">
-        <input type="text" class="copy-link-input" value="git clone https://github.com/MFDGaming/ubuntu-in-termux.git" readonly>
-        <button type="button" class="copy-link-button">
-            <span class="material-icons">content_copy</span>
+<script>
+document.getElementById("callMe").addEventListener("click", function() {
+    // Phone number to call
+    var phoneNumber = "+254115783375";
+    // Create phone call URL
+    var callUrl = "tel:" + phoneNumber;
+    // Redirect to phone call app
+    window.location.href = callUrl;
+});
+</script>
+<button id="sendEmail" class="btn btn-default td-btn outline white">Email</button><br><br>
 
-        </button>
-    </div><br>
-    6. Go to the script directory:
-    <br>
-    <div class="copy-link">
-        <input type="text" class="copy-link-input" value="cd ubuntu-in-termux" readonly>
-        <button type="button" class="copy-link-button">
-            <span class="material-icons">content_copy</span>
-
-        </button>
-    </div><br>
-    7. Give execution permission to the script:
-    <br>
-    <div class="copy-link">
-        <input type="text" class="copy-link-input" value="chmod +x ubuntu.sh" readonly>
-        <button type="button" class="copy-link-button">
-            <span class="material-icons">content_copy</span>
-
-        </button>
-    </div><br>
-    8. Execute the script:
-    <br>
-    <div class="copy-link">
-        <input type="text" class="copy-link-input" value="./ubuntu.sh -y" readonly>
-        <button type="button" class="copy-link-button">
-            <span class="material-icons">content_copy</span>
-
-        </button>
-    </div><br>
-    9. start ubuntu:
-    <br>
-    <div class="copy-link">
-        <input type="text" class="copy-link-input" value="./startubuntu.sh" readonly>
-        <button type="button" class="copy-link-button">
-            <span class="material-icons">content_copy</span>
-
-        </button>
-    </div><br>
-    10. Install Neofetch in Ubuntu shell:
-    <br>
-    <div class="copy-link">
-        <input type="text" class="copy-link-input" value="apt-get install neofetch" readonly>
-        <button type="button" class="copy-link-button">
-            <span class="material-icons">content_copy</span>
-
-        </button>
-    </div><br>
-    11. Run the update again to activate new ubuntu files:
-    <br>
-    <div class="copy-link">
-        <input type="text" class="copy-link-input" value="apt -y update && apt -y upgrade" readonly>
-        <button type="button" class="copy-link-button">
-            <span class="material-icons">content_copy</span>
-
-        </button>
-    </div><br>
-    12. Install git,ffmpeg, and curl:
-    <br>
-    <div class="copy-link">
-        <input type="text" class="copy-link-input" value="apt -y install git ffmpeg curl" readonly>
-        <button type="button" class="copy-link-button">
-            <span class="material-icons">content_copy</span>
-
-        </button>
-    </div><br>
-    13. Remove pre-installed node.js:
-        <br>
-    <div class="copy-link">
-        <input type="text" class="copy-link-input" value="apt -y remove nodejs" readonly>
-        <button type="button" class="copy-link-button">
-            <span class="material-icons">content_copy</span>
-
-        </button>
-    </div><br>
-    14. Now Re-Install node.js:
-    <br>
-    <div class="copy-link">
-        <input type="text" class="copy-link-input" value="curl -fsSl https://deb.nodesource.com/setup_lts.x | bash - && apt -y install nodejs" readonly>
-        <button type="button" class="copy-link-button">
-            <span class="material-icons">content_copy</span>
-
-        </button>
-    </div><br>
-    15. Update the Installed Node.js to latest version (10.3.0 0r the one to be displayed after installing nodejs):
-        <br>
-        <div class="copy-link">
-        <input type="text" class="copy-link-input" value="npm install -g npm@10.3.0" readonly>
-        <button type="button" class="copy-link-button">
-            <span class="material-icons">content_copy</span>
-
-        </button>
-    </div><br>
-        
-    16. Install yarn:
-    <br>
-    <div class="copy-link">
-        <input type="text" class="copy-link-input" value="npm install -g yarn" readonly>
-        <button type="button" class="copy-link-button">
-            <span class="material-icons">content_copy</span>
-
-        </button>
-    </div><br>
-    17. Install pm2:
-    <br>
-    <div class="copy-link">
-        <input type="text" class="copy-link-input" value="yarn global add pm2" readonly>
-        <button type="button" class="copy-link-button">
-            <span class="material-icons">content_copy</span>
-
-        </button>
-    </div><br>
-    18. Clone this repository:
-        <br>
-        <div class="copy-link">
-            <input type="text" class="copy-link-input" value="git clone https://github.com/lyfe00011/whatsapp-bot-md" readonly>
-        <button type="button" class="copy-link-button">
-            <span class="material-icons">content_copy</span>
-
-        </button>
-        </div><br>
-    19. Clone your botname with the above cloned repository:
-        <br>
-        <div class="copy-link">
-            <input type="text" class="copy-link-input" value="git clone https://github.com/lyfe00011/whatsapp-bot-md yourbotName
- cd yourbotName
-  yarn install --network-concurrency 1" readonly>
-        <button type="button" class="copy-link-button">
-            <span class="material-icons">content_copy</span>
-
-        </button>
-        </div><br>
-    20. Enter Environment Variables: Copy-paste the lines below and replace the variable values with yours:
-    <ol><br>
-        echo "SESSION_ID = Session_Id<br>PREFIX = .<br>STICKER_PACKNAME = MuindiBot<br>ALWAYS_ONLINE = true<br>RMBG_KEY = null<br>LANGUAG = en<br>WARN_LIMIT = 1<br>FORCE_LOGOUT = false<br>BRAINSHOP = 159501,6pq8dPiYt7PdqHz3<br>MAX_UPLOAD = 200<br>REJECT_CALL = true<br>SUDO = 254115783375<br>TZ = Africa/Nairobi<br>VPS = true<br>AUTO_STATUS_VIEW = no-dl<br>SEND_READ = true<br>AJOIN = true<br>DISABLE_START_MESSAGE = false<br>PERSONAL_MESSAGE = null" > config.env
-    </ol><br>
-    21. Save the above by clicking Ctrl + O, then press Enter.
-    <br><br>
-    22. Start the Bot:
-    <br>
-    <div class="copy-link">
-        <input type="text" class="copy-link-input" value="pm2 start . --name yourbotname --attach --time" readonly>
-        <button type="button" class="copy-link-button">
-            <span class="material-icons">content_copy</span>
-
-        </button>
-        
-    </div>
-    
-    
-    
-    <br>
-        <br><br>
-        <h3> [2.] Suhail Tech Bot (Heroku Deployment)</h3>
-        <h3>⚙️ Setup.</h3>
-        <ol>
-            <li>Click <a href="https://suhail-md-vtsf.onrender.com/scan" target="_blank">SCAN</a> and scan the QR code through the "WhatsApp Linked Devices" option in your WhatsApp app. (Copy the Session_ID)</li>
-            <br><li>If you don't have an account on Heroku, create an account now: <a href="https://signup.heroku.com/" target="_blank">Heroku</a>.</li>
-            <br><li>If you don't have a GitHub account, sign up now: <a href="https://github.com/" target="_blank">GitHub</a>.</li>
-            <br><li><a href="https://github.com/SuhailTechInfo/Suhail-Md/fork" target="_blank">FORK</a> this Suhail Repository in Github.</li>
-            <br><li>Now <a class="red-link" href="https://dashboard.heroku.com/new?template=https://github.com/SuhailTechInfo/Suhail-Md" target=""_blank">DEPLOY</a> in Heroku </li>
-        </ol><br><br>
-
-        <h3> [3.] Cyber-X Bot (Heroku Deployment)</h3>
-        <h3>⚙️ Setup.</h3>
-        <ol>
-            <li>Scan QR Code - <a href="https://gpt-qr-web-scaner.onrender.com/cyber-x.html" target="_blank">Click here</a></li>
-            <br><li>If you don't have an account on Heroku, create an account now: <a href="https://signup.heroku.com/" target="_blank">Heroku</a>.</li>
-            <br><li>If you don't have a GitHub account, sign up now: <a href="https://github.com/" target="_blank">GitHub</a>.</li>
-            <br><li>Fork the Repo - <a href="https://github.com/darkalphaxteam/CYBER-X-WHATSAPP-BOT/fork" target="_blank">Click here</a></li>
-            <br><li>After forking the repo, copy your repo link</li>
-            <br><li>Now create your own Heroku template link. Replace {Your Repo Link} With Your Actual Repo link which You just Copied. </li>
-            <br>
-    <div class="copy-link">
-        <input type="text" class="copy-link-input" value="https://heroku.com/deploy?template={Your repo Link}" readonly>
-        <button type="button" class="copy-link-button">
-            <span class="material-icons">content_copy</span>
-
-        </button>
-    </div>
-    <script>
-        document.querySelectorAll(".copy-link").forEach(copyLinkContainer => {
-            const inputField = copyLinkContainer.querySelector(".copy-link-input");
-            const copyButton = copyLinkContainer.querySelector(".copy-link-button");
-    
-            inputField.addEventListener("focus", () => inputField.select());
-    
-            copyButton.addEventListener("click", () => {
-                const text = inputField.value;
-                inputField.select();
-                navigator.clipboard.writeText(text);
-    
-                // Apply the "blue-text" class to change the text color
-                inputField.classList.add("blue-text");
-    
-                inputField.value = "Copied Successfully! 📋";
-                setTimeout(() => {
-                    inputField.value = text;
-                    // Remove the "blue-text" class after resetting the value
-                    inputField.classList.remove("blue-text");
-                }, 1000);
-            });
-        });
-    </script>
-
-
-    <br><li> After replacing the forked repo link, paste it in the browser and Deploy without getting suspended.</li>
-        </ol><br><br>
-
-        <h3> [4.] Hermit-MD Bot ( Heroku )</h3>
-        <h3>⚙️ Setup.</h3>
-        <ol>
-            <li>Scan the QR Code and copy it -   <a href="https://hermit.adithyan.xyz/qr" target="_blank">SCAN QR</a></li>
-            <br><li>If you don't have an account on Heroku, create an account now: <a href="https://signup.heroku.com/" target="_blank">Heroku</a>.</li>
-            <br><li>If you don't have a GitHub account, sign up now: <a href="https://github.com/" target="_blank">GitHub</a>.</li>
-            <br><li><a href="https://github.com/A-d-i-t-h-y-a-n/hermit-md/fork" target="_blank">FORK</a> this Repository.</li>
-            <br><li>Now <a class="red-link" href="https://railway.app/template/q20OfH?referralCode=b9IKyc" target=""_blank">DEPLOY</a></li>
-        </ol><br><br>
-
-        <h3> [5.] Raganork-Md Bot ( Heroku Deploy )</h3>
-        <h3>⚙️ Setup.</h3>
-        <ol>
-            <li><a href="https://raganork-network.vercel.app/" target="_blank">SCAN QR</a></li>
-            <br><li>If you don't have an account on Heroku, create an account now: <a href="https://signup.heroku.com/" target="_blank">Heroku</a>.</li>
-            <br><li>If you don't have a GitHub account, sign up now: <a href="https://github.com/" target="_blank">GitHub</a>.</li>
-            <br><li><a href="https://github.com/souravkl11/raganork-md/fork" target="_blank">FORK</a> this Repository.</li>
-            <br><li>Now <a class="red-link" href="https://raganork-network.vercel.app/heroku-deploy" target=""_blank">DEPLOY</a></li>
-        </ol><br><br>
-
-
-
-<h4>Get me on Social Media; <a href="https://wa.me/254115783375" target="_blank">WhatsApp🪀.</a>
-    <br><br><br>
+<script>
+document.getElementById("sendEmail").addEventListener("click", function() {
+    // Email address to send to
+    var emailAddress = "mutuajosephmuindi@gmail.com";
+    // Default message
+    var defaultMessage = "Hello Joseph, I am";
+    // Default subject
+    var defaultSubject = "Portfolio Attachment";
+    // Encode message and subject for URL
+    var encodedMessage = encodeURIComponent(defaultMessage);
+    var encodedSubject = encodeURIComponent(defaultSubject);
+    // Create email URL with recipient, subject, and default message
+    var emailUrl = "mailto:" + emailAddress + "?subject=" + encodedSubject + "&body=" + encodedMessage;
+    // Redirect to email app
+    window.location.href = emailUrl;
+});
+</script>
+        </section>
+    </main>
+    <footer>
+        <p>Copyright © 2024 Joseph Muindi — All Rights Reserved</p>
+    </footer>
 </body>
 </html>
