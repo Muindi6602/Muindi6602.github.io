@@ -10,7 +10,7 @@
 }
 
 html {
-    font-size: 110%;
+    font-size: 100%;
 }
 
 body {
@@ -106,7 +106,7 @@ nav ul li a {
 }
 
 #contact {
-    background-color: teal; 
+    background-color: silver; 
     padding: 15px;
     border-radius: 0.5%;
     text-align: center;
