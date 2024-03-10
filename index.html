@@ -300,31 +300,77 @@
                         
                     </div>
                 </div>
-
 <div class="column right">
     <div class="text">Private message</div>
     <form id="contactForm">
         <div class="fields">
             <div class="field name">
                 <input type="text" id="name" placeholder="Name" required>
+                <div class="error-message" id="nameError">Please fill in this field.</div>
             </div>
             <div class="field email">
-                <input type="email" id="email" placeholder="Email" required>
+                <input type="email" id="email" placeholder="Email" required pattern="[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|.+\.co\.ke)$">
+                <div class="error-message" id="emailError">Please enter a valid email (e.g., example@gmail.com).</div>
             </div>
         </div>
         <div class="field">
             <input type="text" id="subject" placeholder="Subject" required>
+            <div class="error-message" id="subjectError">Please fill in this field.</div>
         </div>
         <div class="field textarea">
             <textarea id="message" cols="30" rows="10" placeholder="Message.." required></textarea>
+            <div class="error-message" id="messageError">Please fill in this field.</div>
         </div>
         <div class="button-area">
-            <button type="button" onclick="openWhatsApp()">Send message</button>
+            <button type="button" onclick="validateAndOpenWhatsApp()">Send message</button>
         </div>
     </form>
 </div>
 
 <script>
+function validateAndOpenWhatsApp() {
+    var name = document.getElementById('name').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var subject = document.getElementById('subject').value.trim();
+    var message = document.getElementById('message').value.trim();
+
+    // Validate name
+    if (name === '') {
+        document.getElementById('nameError').style.display = 'block';
+        return;
+    } else {
+        document.getElementById('nameError').style.display = 'none';
+    }
+
+    // Validate email
+    var emailRegex = /[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|.+\.co\.ke)$/;
+    if (!emailRegex.test(email)) {
+        document.getElementById('emailError').style.display = 'block';
+        return;
+    } else {
+        document.getElementById('emailError').style.display = 'none';
+    }
+
+    // Validate subject
+    if (subject === '') {
+        document.getElementById('subjectError').style.display = 'block';
+        return;
+    } else {
+        document.getElementById('subjectError').style.display = 'none';
+    }
+
+    // Validate message
+    if (message === '') {
+        document.getElementById('messageError').style.display = 'block';
+        return;
+    } else {
+        document.getElementById('messageError').style.display = 'none';
+    }
+
+    // If all fields are valid, open WhatsApp
+    openWhatsApp();
+}
+
 function openWhatsApp() {
     var name = document.getElementById('name').value.trim();
     var email = document.getElementById('email').value.trim();
