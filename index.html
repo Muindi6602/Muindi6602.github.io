@@ -325,10 +325,9 @@
                         <div class="field">
                             <label for="captcha"><span id="captchaLabel" style="color: red;">Confirm you are not a robot</span></label><br>
                             <input type="number" id="captcha" placeholder="Answer" required><br>
-                            <button type="button" class="refresh-button" onclick="generateCaptcha()">Refresh</button>
                         </div>
-                        <div class="button-area"><br><br><br><br><br><br><br><br><br>
-                            <button type="button" onclick="validateCaptcha()">Send message</button>
+                        <div class="button-area">
+                            <br><br><br><br><br><br><br><button type="button" onclick="validateCaptcha()">Send message</button>
                         </div>
                     </form>
                 </div>
@@ -341,43 +340,42 @@
                 
                     function validateCaptcha() {
                         var captchaInput = document.getElementById('captcha').value.trim();
-                    
+                
                         // Check if the entered value is correct
-                        if (parseInt(captchaInput) === 4) {
+                        if (parseInt(captchaInput) === 81) {
                             openWhatsApp(); // If correct, proceed to send the message
                         } else {
                             alert("Incorrect answer to the CAPTCHA. Please try again."); // If incorrect, show an alert
                         }
                     }
-                    
+                
                     function openWhatsApp() {
                         var name = document.getElementById('name').value.trim();
                         var email = document.getElementById('email').value.trim();
                         var subject = document.getElementById('subject').value.trim();
                         var message = document.getElementById('message').value.trim();
-                    
+                
                         // Construct the WhatsApp message
                         var whatsappMessage = `Subject: *${subject}*\n\nMessage: ${message}\n\nName: ${name}\nEmail: ${email}`;
-                    
+                
                         // Encode the message for the URL
                         var encodedMessage = encodeURIComponent(whatsappMessage);
-                    
+                
                         // Construct the WhatsApp URL
                         var whatsappUrl = `https://wa.me/+254115783375?text=${encodedMessage}`;
-                    
+                
                         // Open WhatsApp with the pre-filled message
                         window.open(whatsappUrl);
                     }
-                    
+                
                     function generateCaptcha() {
-                        // Generate a random number between 1 and 10 for the CAPTCHA
-                        var randomNumber = Math.floor(Math.random() * 10) + 1;
-                    
                         // Update the CAPTCHA question
                         document.getElementById('captcha').value = '';
-                        document.getElementById('captchaLabel').innerHTML = '<span style="color: red;">Confirm you are not a robot</span><br>What is ' + randomNumber + ' + ' + randomNumber + '?';
+                        document.getElementById('captchaLabel').innerHTML = '<span style="color: red;">Confirm you are not a robot</span><br>What is 27 + 54?';
                     }
                 </script>
+                
+                
                 
                 
             
