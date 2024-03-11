@@ -12,7 +12,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
     <style>
+
         #contactForm label span {
             color: red;
         }
@@ -139,7 +141,7 @@
                     <div class="box">
                         <i class="fas fa-robot"></i>
                         <div class="text">Bots Deployment</div><br><br>
-                        <p>In the bots deployment sector, I've created several bots, see them <a href="https://muindi6602.github.io/muindi70/" style="color: red;">HERE</a>. Levanter, Suhail, Cyber-X, Hermit, Raganork and many more</p>
+                        <p>In the bots deployment sector, I've created several bots, see them <a href="https://muindi6602.github.io/muindi70/">HERE </a>. Levanter, Suhail, Cyber-X, Hermit, Raganork and many more</p>
                     </div>            
                 </div>
                 <div class="card">
@@ -306,39 +308,81 @@
                     </div>
                 </div>
                 <div class="column right">
-    <div class="text">Private message</div>
-    <form id="contactForm">
-        <div class="fields">
-            <div class="field name">
-                <input type="text" id="name" placeholder="Name" required>
-            </div>
-            <div class="field email">
-                <input type="email" id="email" placeholder="Email" required>
-            </div>
-        </div>
-        <div class="field">
-            <input type="text" id="subject" placeholder="Subject" required>
-        </div>
-        <div class="field textarea">
-            <textarea id="message" cols="30" rows="10" placeholder="Message.." required></textarea>
-        </div>
-        <div class="field">
-            <label for="captcha"><span id="captchaLabel" style="color: red;">Confirm you are not a robot</span></label><br>
-            <input type="number" id="captcha" placeholder="Answer" required><br>
-        </div>
-        <div class="field">
-            <div style="display: flex; align-items: center;">
-                <input type="checkbox" id="termsCheckbox" required style="margin-right: 1px;">
-                <br><br><br><br><br><br><br><label for="termsCheckbox" style="font-size: 14px; margin-right: 0;">I agree to the <a href="https://www.whatsapp.com/legal/terms-of-service" target="_blank">terms and conditions</a> of chatting with Muindi</label>
-            </div>
-
-        </div>
-        <div class="button-area">
-            <br><br><br><br><br><br><br><br> <button type="button" onclick="validateForm()">Send message</button>
-        </div>
-    </form>
-</div>
-
+                    <div class="text">Private message</div>
+                    <form id="contactForm">
+                      <div class="fields">
+                        <div class="field name">
+                          <input type="text" id="name" placeholder="Name" required>
+                        </div>
+                        <div class="field email">
+                          <input type="email" id="email" placeholder="Email" required>
+                        </div>
+                      </div>
+                      <div class="field">
+                        <input type="text" id="subject" placeholder="Subject" required>
+                      </div>
+                      <div class="field textarea">
+                        <textarea id="message" cols="30" rows="10" placeholder="Message.." required></textarea>
+                      </div>
+                      <div class="field">
+                        <label for="captcha"><span id="captchaLabel" style="color: red;">Confirm you are not a robot</span></label><br>
+                        <input type="number" id="captcha" placeholder="Answer" required><br>
+                      </div>
+                      <div class="field">
+                        <div style="display: flex; align-items: center;">
+                          <input type="checkbox" id="termsCheckbox" required style="margin-right: 1px;">
+                          <br><br><br><br><br><br><br><label for="termsCheckbox" style="font-size: 14px; margin-right: 0;">I agree to the <a href="https://www.whatsapp.com/legal/terms-of-service" target="_blank">terms and conditions</a> of chatting with Muindi</label>
+                        </div>
+                      </div>
+                      <div class="button-area">
+                        <br><br><br><br><br><br><br><br> <button type="button" onclick="validateForm()">Send message</button>
+                      </div>
+                      <div class="button-area">
+                        <br><button type="button" id="deleteButton">Delete message</button>
+                      </div>
+                    </form>
+                  </div>
+                  
+                  <!-- Include SweetAlert2 library -->
+                  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+                  
+                  <script>
+                    document.getElementById('deleteButton').addEventListener('click', function() {
+                      Swal.fire({
+                        title: "Are you sure?",
+                        text: "You won't be able to reverse this!",
+                        icon: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#3085d6",
+                        cancelButtonColor: "#d33",
+                        confirmButtonText: "Yes, delete it!"
+                      }).then((result) => {
+                        if (result.isConfirmed) {
+                          // Clear form fields
+                          document.getElementById("name").value = "";
+                          document.getElementById("email").value = "";
+                          document.getElementById("subject").value = "";
+                          document.getElementById("message").value = "";
+                          document.getElementById("captcha").value = "";
+                          document.getElementById("termsCheckbox").checked = false;
+                  
+                          Swal.fire({
+                            title: "Deleted!",
+                            text: "Your message has been deleted.",
+                            icon: "success"
+                          });
+                        }
+                      });
+                    });
+                  
+                    function validateForm() {
+                      // Your form validation logic here
+                      // For example:
+                      // alert("Form validated!"); 
+                    }
+                  </script>
+                  
+    
                        
                 
                 <script>
@@ -396,6 +440,7 @@
             </div>
         </div>
     </section>
+
 
     <!-- footer section start -->
     <footer>
