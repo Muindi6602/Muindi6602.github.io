@@ -12,7 +12,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
-
+    <style>
+        #contactForm label span {
+            color: red;
+        }
+    </style>
+    
 </head>
 <body>
     <div class="scroll-up-btn">
@@ -300,102 +305,82 @@
                         
                     </div>
                 </div>
-                <!-- HTML form -->
-<div class="column right">
-    <div class="text">Private message</div>
-    <form id="contactForm">
-        <div class="fields">
-            <div class="field name">
-                <input type="text" id="name" placeholder="Name" required>
-                <div class="error-message" id="nameError"></div>
-            </div>
-            <div class="field email">
-                <input type="email" id="email" placeholder="Email" required pattern="[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|.+\.co\.ke)$">
-                <div class="error-message" id="emailError"></div>
-            </div>
-        </div>
-        <div class="field">
-            <input type="text" id="subject" placeholder="Subject" required>
-            <div class="error-message" id="subjectError"></div>
-        </div>
-        <div class="field textarea">
-            <textarea id="message" cols="30" rows="10" placeholder="Message.." required></textarea>
-            <div class="error-message" id="messageError"></div>
-        </div>
-        <div class="button-area">
-            <button type="button" onclick="validateAndOpenWhatsApp()">Send message</button>
-        </div>
-    </form>
-</div>
-
-<script>
-function validateAndOpenWhatsApp() {
-    var name = document.getElementById('name').value.trim();
-    var email = document.getElementById('email').value.trim();
-    var subject = document.getElementById('subject').value.trim();
-    var message = document.getElementById('message').value.trim();
-
-    // Clear previous error messages
-    clearErrorMessages();
-
-    // Validate name
-    if (name === '') {
-        document.getElementById('nameError').innerText = 'Please fill in this field.';
-        return;
-    }
-
-    // Validate email
-    var emailRegex = /[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|.+\.co\.ke)$/;
-    if (!emailRegex.test(email)) {
-        document.getElementById('emailError').innerText = 'Please enter a valid email (e.g., example@gmail.com).';
-        return;
-    }
-
-    // Validate subject
-    if (subject === '') {
-        document.getElementById('subjectError').innerText = 'Please fill in this field.';
-        return;
-    }
-
-    // Validate message
-    if (message === '') {
-        document.getElementById('messageError').innerText = 'Please fill in this field.';
-        return;
-    }
-
-    // If all fields are valid, open WhatsApp
-    openWhatsApp();
-}
-
-function clearErrorMessages() {
-    var errorMessages = document.querySelectorAll('.error-message');
-    errorMessages.forEach(function(errorMessage) {
-        errorMessage.innerText = '';
-    });
-}
-
-function openWhatsApp() {
-    var name = document.getElementById('name').value.trim();
-    var email = document.getElementById('email').value.trim();
-    var subject = document.getElementById('subject').value.trim();
-    var message = document.getElementById('message').value.trim();
-
-    // Construct the WhatsApp message
-    var whatsappMessage = `Subject: *${subject}*\n\nMessage: ${message}\n\nName: ${name}\nEmail: ${email}`;
-
-    // Encode the message for the URL
-    var encodedMessage = encodeURIComponent(whatsappMessage);
-
-    // Construct the WhatsApp URL
-    var whatsappUrl = `https://wa.me/+254115783375?text=${encodedMessage}`;
-
-    // Open WhatsApp with the pre-filled message
-    window.open(whatsappUrl);
-}
-</script>
-
-
-
+                <div class="column right">
+                    <div class="text">Private message</div>
+                    <form id="contactForm">
+                        <div class="fields">
+                            <div class="field name">
+                                <input type="text" id="name" placeholder="Name" required>
+                            </div>
+                            <div class="field email">
+                                <input type="email" id="email" placeholder="Email" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <input type="text" id="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="field textarea">
+                            <textarea id="message" cols="30" rows="10" placeholder="Message.." required></textarea>
+                        </div>
+                        <div class="field">
+                            <label for="captcha"><span id="captchaLabel" style="color: red;">Confirm you are not a robot</span></label><br>
+                            <input type="number" id="captcha" placeholder="Answer" required><br>
+                            <button type="button" class="refresh-button" onclick="generateCaptcha()">Refresh</button>
+                        </div>
+                        <div class="button-area"><br><br><br><br><br><br><br><br><br>
+                            <button type="button" onclick="validateCaptcha()">Send message</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <script>
+                    // Call generateCaptcha() when the page loads
+                    window.onload = function() {
+                        generateCaptcha();
+                    };
+                
+                    function validateCaptcha() {
+                        var captchaInput = document.getElementById('captcha').value.trim();
+                    
+                        // Check if the entered value is correct
+                        if (parseInt(captchaInput) === 4) {
+                            openWhatsApp(); // If correct, proceed to send the message
+                        } else {
+                            alert("Incorrect answer to the CAPTCHA. Please try again."); // If incorrect, show an alert
+                        }
+                    }
+                    
+                    function openWhatsApp() {
+                        var name = document.getElementById('name').value.trim();
+                        var email = document.getElementById('email').value.trim();
+                        var subject = document.getElementById('subject').value.trim();
+                        var message = document.getElementById('message').value.trim();
+                    
+                        // Construct the WhatsApp message
+                        var whatsappMessage = `Subject: *${subject}*\n\nMessage: ${message}\n\nName: ${name}\nEmail: ${email}`;
+                    
+                        // Encode the message for the URL
+                        var encodedMessage = encodeURIComponent(whatsappMessage);
+                    
+                        // Construct the WhatsApp URL
+                        var whatsappUrl = `https://wa.me/+254115783375?text=${encodedMessage}`;
+                    
+                        // Open WhatsApp with the pre-filled message
+                        window.open(whatsappUrl);
+                    }
+                    
+                    function generateCaptcha() {
+                        // Generate a random number between 1 and 10 for the CAPTCHA
+                        var randomNumber = Math.floor(Math.random() * 10) + 1;
+                    
+                        // Update the CAPTCHA question
+                        document.getElementById('captcha').value = '';
+                        document.getElementById('captchaLabel').innerHTML = '<span style="color: red;">Confirm you are not a robot</span><br>What is ' + randomNumber + ' + ' + randomNumber + '?';
+                    }
+                </script>
+                
+                
+            
             </div>
         </div>
     </section>
