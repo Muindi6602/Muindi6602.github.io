@@ -678,3 +678,17 @@ footer span a:hover{
         line-height: 38px;
     }
 }
+    /* CSS for the refresh button */
+    .refresh-button {
+        background-color: blueviolet;
+        color: rosybrown;
+        border: none;
+        padding: 8px 12px;
+        cursor: pointer;
+        border-radius: 4px;
+        margin-left: 10px;
+    }
+
+    .refresh-button:hover {
+        background-color: #999;
+    }
