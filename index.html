@@ -306,31 +306,40 @@
                     </div>
                 </div>
                 <div class="column right">
-                    <div class="text">Private message</div>
-                    <form id="contactForm">
-                        <div class="fields">
-                            <div class="field name">
-                                <input type="text" id="name" placeholder="Name" required>
-                            </div>
-                            <div class="field email">
-                                <input type="email" id="email" placeholder="Email" required>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <input type="text" id="subject" placeholder="Subject" required>
-                        </div>
-                        <div class="field textarea">
-                            <textarea id="message" cols="30" rows="10" placeholder="Message.." required></textarea>
-                        </div>
-                        <div class="field">
-                            <label for="captcha"><span id="captchaLabel" style="color: red;">Confirm you are not a robot</span></label><br>
-                            <input type="number" id="captcha" placeholder="Answer" required><br>
-                        </div>
-                        <div class="button-area">
-                            <br><br><br><br><br><br><br><button type="button" onclick="validateCaptcha()">Send message</button>
-                        </div>
-                    </form>
-                </div>
+    <div class="text">Private message</div>
+    <form id="contactForm">
+        <div class="fields">
+            <div class="field name">
+                <input type="text" id="name" placeholder="Name" required>
+            </div>
+            <div class="field email">
+                <input type="email" id="email" placeholder="Email" required>
+            </div>
+        </div>
+        <div class="field">
+            <input type="text" id="subject" placeholder="Subject" required>
+        </div>
+        <div class="field textarea">
+            <textarea id="message" cols="30" rows="10" placeholder="Message.." required></textarea>
+        </div>
+        <div class="field">
+            <label for="captcha"><span id="captchaLabel" style="color: red;">Confirm you are not a robot</span></label><br>
+            <input type="number" id="captcha" placeholder="Answer" required><br>
+        </div>
+        <div class="field">
+            <div style="display: flex; align-items: center;">
+                <input type="checkbox" id="termsCheckbox" required style="margin-right: 1px;">
+                <br><br><br><br><br><br><br><label for="termsCheckbox" style="font-size: 14px; margin-right: 0;">I agree to the <a href="https://www.whatsapp.com/legal/terms-of-service" target="_blank">terms and conditions</a> of chatting with Muindi</label>
+            </div>
+
+        </div>
+        <div class="button-area">
+            <br><br><br><br><br><br><br><br> <button type="button" onclick="validateForm()">Send message</button>
+        </div>
+    </form>
+</div>
+
+                       
                 
                 <script>
                     // Call generateCaptcha() when the page loads
@@ -338,14 +347,19 @@
                         generateCaptcha();
                     };
                 
-                    function validateCaptcha() {
+                    function validateForm() {
                         var captchaInput = document.getElementById('captcha').value.trim();
+                        var termsCheckbox = document.getElementById('termsCheckbox');
                 
-                        // Check if the entered value is correct
-                        if (parseInt(captchaInput) === 81) {
-                            openWhatsApp(); // If correct, proceed to send the message
+                        // Check if the entered value is correct and terms checkbox is checked
+                        if (parseInt(captchaInput) === 81 && termsCheckbox.checked) {
+                            openWhatsApp(); // If correct and terms agreed, proceed to send the message
                         } else {
-                            alert("Incorrect answer to the CAPTCHA. Please try again."); // If incorrect, show an alert
+                            if (!termsCheckbox.checked) {
+                                alert("Please read and agree to the terms and conditions before sending the message.");
+                            } else {
+                                alert("Incorrect answer to the CAPTCHA. Please try again."); // If incorrect, show an alert
+                            }
                         }
                     }
                 
