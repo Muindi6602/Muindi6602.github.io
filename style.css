@@ -692,3 +692,110 @@ footer span a:hover{
     .refresh-button:hover {
         background-color: #999;
     }
+
+    //review+sweetalert
+
+    .review-container {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .review-container .container {
+        background-color: pink;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        width: 400px;
+    }
+    
+    .review-container h1 {
+        font-size: 24px;
+        margin: 0;
+    }
+    
+    .review-container .rating {
+        font-size: 20px;
+        margin: 10px 0;
+    }
+    
+    .review-container .stars {
+        font-size: 30px;
+        margin: 10px 0;
+    }
+    
+    .review-container .star {
+        cursor: pointer;
+        margin: 0 5px;
+    }
+    
+    .review-container .one {
+        color: rgb(255, 0, 0);
+    }
+    
+    .review-container .two {
+        color: rgb(255, 106, 0);
+    }
+    
+    .review-container .three {
+        color: rgb(251, 255, 120);
+    }
+    
+    .review-container .four {
+        color: rgb(255, 255, 0);
+    }
+    
+    .review-container .five {
+        color: rgb(24, 159, 14);
+    }
+    
+    .review-container textarea {
+        width: 90%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    
+    .review-container button {
+        background-color: #007BFF;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    .review-container button:hover {
+        background-color: #0056b3;
+    }
+    
+    .review-container .reviews {
+        margin-top: 20px;
+        text-align: left;
+    }
+    
+    .review-container .review {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 10px;
+        margin: 10px 0;
+    }
+    
+    .review-container .review p {
+        margin: 0;
+    }
+    
+    // css alert style
+    
+    body {
+        font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
+      }
+      
+      .sweet-alert-body {
+        font-family: inherit; /* Inherit font-family from body */
+      }
+      
+      
