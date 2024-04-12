@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc." />
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="https://payments.ecitizen.go.ke/iframev2/assets/css/theme.min.css">
+    <!-- Title -->
+      <title>Donate Muindi</title>
+    <link rel="stylesheet" href="https://payments.ecitizen.go.ke/iframe/card_assets/card.css">
+  </head>
+  <body>
+    <!-- MAIN CONTENT
+    ================================================== -->
+    <div class="main-content">
+<div id="vue-root">
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-8 mx-auto">
+      <div class="d-flex justify-content-between mb-3 mt-6">
+        <a class="navbar-brand mr-auto" href="#">
+            <img src="https://payments.ecitizen.go.ke/images/khusapay.svg" alt="..." class="navbar-brand-img" width="200px" height="120px">
+        </a>
+        <p class="mb-0 align-self-end lead">JOSEPH MUINDI MUTUA, 2547115783375</p>
+        </div>
+        <div id="accordion">
+          <div class="card">
+            <div class="card-body d-flex justify-content-between">
+              <div>
+                <p class="mb-1 small text-uppercase">
+                  NUMBER
+                </p>
+                <h2 class="mb-0">0115783375</h2>
+              </div>
+              <div class="media aos-init aos-animate">
+                <div class="media-body text-right">
+                  <p class="mb-1 small text-uppercase">
+                    Total Bill
+                  </p>
+                  <h2 class="mb-0">
+KES 100.00                  </h2>
+                </div>
+                <!-- setting here -->
+              </div>
+            </div>
+            <!-- setting here -->
+
+              <div id="collapseOne" class="collapse bg-light" aria-labelledby="headingOne" data-parent="#accordion-disable">
+              <div class="card-body py-0">
+                <div class="list-group list-group-flush">
+                  <div class="list-group-item">
+                    <div class="row align-items-center">
+                      <div class="col">
+                        <!-- Title -->
+                        <p class="mb-0">application/revision</p>
+                      </div>
+                      <div class="col-auto">
+                        <!-- Time -->
+                        <p class="mb-0">
+KES 100.00                        </p>
+                      </div>
+                    </div>
+                    <!-- / .row -->
+                  </div>
+                  <div class="list-group-item">
+                    <div class="row align-items-center">
+                      <div class="col">
+                        <!-- Title -->
+                        <p class="mb-0">Convenience Fee</p>
+                      </div>
+                      <div class="col-auto">
+                        <!-- Time -->
+                        <p class="mb-0">
+KES 0.00                        </p>
+                      </div>
+                    </div>
+                    <!-- / .row -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header">
+          <div class="header-body pb-2">
+            <!-- Title -->
+            <p class="mb-0">
+              Select Payment Mode
+            </p>
+          </div>
+        </div>
+        <!-- Card -->
+        <ul class="row feature feature-list checkout-btns">
+              <li class="col-12 col-md-6">
+                <!-- Mpesa trigger modal -->
+                <button type="button" class="btn btn-lg btn-block btn-white mb-3" data-toggle="modal"
+                data-target="#mpesaModal1">
+                  <p class="lead mb-0">
+                    Mpesa
+                  </p>
+                </button>
+                <mpesa-v2 
+                  logo="https://payments.ecitizen.go.ke/images/khusapay.svg"
+                  request_type="invoice"
+                  currency="KES"
+                  amount_net="100"
+                  fee="0"
+                  gid="1"
+                  shortcode=""
+                  gateway="1"
+                  msisdn="254115783375"
+                  instructions="&lt;ol&gt;
+&lt;li&gt;Go to MPESA menu on your phone&lt;/li&gt;
+&lt;li&gt;Select Send Money option&lt;/li&gt;
+&lt;li&gt;Enter Phone Number &lt;b&gt;+254115783375&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;Enter the amount &lt;b&gt;100.00&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;Enter your MPESA PIN and Send&lt;/li&gt;
+&lt;li&gt;You will receive a confirmation SMS from MPESA&lt;/li&gt;
+&lt;/ol&gt;"
+                  agent_fee="0"
+                  invoice_no="EMEDPDX"
+                  base_url="https://payments.ecitizen.go.ke"
+                  callback_url="https://students.kuccps.net/"
+                  status_api_url="https://payments.ecitizen.go.ke/api/payment/co/getStatus"></mpesa-v2>
+              </li>
+
+
+
+
+
+
+
+
+
+
+
+
+             
+
+
+
+
+
+
+
+
+
+
+
+
+
+              <li class="col-12 col-md-6">
+                <!-- UnionPay trigger modal -->
+                <button type="button" class="btn btn-lg btn-block btn-white mb-3" data-toggle="modal"
+                data-target="#pesaflowInstructionModal8">
+                  <p class="lead mb-0">
+Kenya Commercial Bank                  </p>
+                </button>
+                <payment-instructions logo="https://payments.ecitizen.go.ke/images/khusapay.svg"
+                request_type="invoice"
+                currency="KES"
+                amount_net="100"
+                invoice_no="1290598576"
+                gid="8"
+                fee="0"
+                trxtime='20240302142626'
+                instructions="&lt;p&gt;Account No: 1290598576&lt;/p&gt;
+&lt;p&gt;KCB Banking&lt;/p&gt;
+&lt;ol&gt;
+   &lt;li&gt;Open M-PESA&lt;/li&gt;
+   &lt;li&gt;Click Lipa na M-PESA option&lt;/li&gt;
+
+   &lt;li&gt;Select Pay Bill option&lt;/li&gt;
+   &lt;li&gt;Enter Buiness Number &lt;b&gt;522533&lt;/b&gt;&lt;/li&gt;
+   &lt;li&gt;Enter Account Number &lt;b&gt;1290598576&lt;/b&gt;&lt;/li&gt;
+   &lt;li&gt;Enter the amount &lt;b&gt;100.00&lt;/b&gt;&lt;/li&gt;
+   &lt;li&gt;Enter your MPESA PIN and Send&lt;/li&gt;
+   &lt;li&gt;You will receive a confirmation SMS from MPESA&lt;/li&gt;
+
+&lt;/ol&gt;
+&lt;p class=&quot;mb-0&quot;&gt;Once you have made the deposit. Click complete below.&lt;/p&gt;"
+                loader='https://payments.ecitizen.go.ke/images/loaders/loader6.gif'
+                callback_url="https://students.kuccps.net/"
+                base_url="https://payments.ecitizen.go.ke"
+                agent_fee="0"
+                merchant_id=""
+                mpgs_url=""
+                status_api_url="https://payments.ecitizen.go.ke/api/payment/co/getStatus"></payment-instructions>
+                </li>
+               
+
+
+
+
+               
+
+            
+                
+                
+              
+          <!-- End of Modals -->
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+    <div class="col-12 col-md-8 mx-auto">
+      <center><p> </p></center>
+    </div>
+  </div>
+  </div>
+  <!---End row -->
+  <div id="oo">
+<pesaflow-gateway  xcsrftoken="PAYyf1AvGgpRDx4RGwItBhQccCk7FClJfhKFbbHP8wGrS3DAN_1DvGzx" 
+  logo="https://payments.ecitizen.go.ke/images/khusapay.svg"
+  request_type="invoice"
+  currency="KES"
+  amount_net="100"
+  invoice_no="EMEDPDX"
+  fee="0"
+  bill_ref="KUCCPS-843608"
+  service_id="10577"
+  agent_fee="0"
+  agency_url="https://payments.ecitizen.go.ke/agent/signin"
+  base_url="https://payments.ecitizen.go.ke"
+  callback_url="https://students.kuccps.net/"
+  mpgs_api_url=""
+  status_api_url="https://payments.ecitizen.go.ke/api/payment/co/getStatus"></pesaflow-gateway>
+<!-- Mpesa -->
+
+<!-- Debit / Credit Card / Prepaid -->
+
+<!-- Eazzypay -->
+<eazzypay-v2 
+  logo="https://payments.ecitizen.go.ke/images/khusapay.svg"
+  request_type="invoice"
+  currency="KES"
+  amount_net="100"
+  invoice_no="EMEDPDX"
+  fee="0"
+  base_url="https://payments.ecitizen.go.ke"
+  callback_url="https://students.kuccps.net/"
+  agent_fee="0"
+  status_api_url="https://payments.ecitizen.go.ke/api/payment/co/getStatus"></eazzypay-v2>
+
+<!-- KCB cash -->
+<kcbcash-v2 
+  logo="https://payments.ecitizen.go.ke/images/khusapay.svg"
+  request_type="invoice"
+  currency="KES"
+  amount_net="100"
+  invoice_no="1290598576"
+  service_name="application/revision"
+  bill_ref="KUCCPS-843608"
+  fee="0"
+  base_url="https://payments.ecitizen.go.ke"
+  callback_url="https://students.kuccps.net/"
+  agent_fee="0"
+  status_api_url="https://payments.ecitizen.go.ke/api/payment/co/getStatus"></kcbcash-v2>
+
+
+<unionpay-v2 logo="https://payments.ecitizen.go.ke/images/khusapay.svg"
+  request_type="invoice"
+  currency="KES"
+  amount_net="100"
+  invoice_no="EMEDPDX"
+  fee="0"
+  trxtime = '20240302142626'
+  loader='https://payments.ecitizen.go.ke/images/loaders/loader6.gif'
+  base_url="https://payments.ecitizen.go.ke"
+  callback_url="https://students.kuccps.net/"
+  agent_fee="0"
+
+  status_api_url="https://payments.ecitizen.go.ke/api/payment/co/getStatus"></capitalpay-v2>
+<pesaflow-account-v2 logo="https://payments.ecitizen.go.ke/images/khusapay.svg"
+  request_type="invoice"
+  currency="KES"
+  amount_net="100"
+  invoice_no="EMEDPDX"
+  customer_allowed="false"
+  fee="0"
+  trxtime = '20240302142626'
+  loader='https://payments.ecitizen.go.ke/images/loaders/loader6.gif'
+  base_url="https://payments.ecitizen.go.ke"
+  callback_url="https://students.kuccps.net/"
+  sys_name=Pesaflow
+  agent_fee="0"
+  merchant_id=""
+  mpgs_url=""
+  status_api_url="https://payments.ecitizen.go.ke/api/payment/co/getStatus"
+  partial_payment_allowed="false"
+  con_key="RjBdyYpVUrlc40D8"
+  con_secret="9x7GmO54n5nUwsrudEzd1Xu8iktUEE9m"></pesaflow-account-v2>
+<fdh-bank-gateway logo="http://payments.ecitizen.go.ke/images/khusapay.svg"
+  logo="http://payments.ecitizen.go.ke/images/khusapay.svg"
+  request_type="invoice"
+  currency="KES"
+  amount_net="100"
+  invoice_no="EMEDPDX"
+  service_name="application/revision"
+  bill_ref="KUCCPS-843608"
+  fee="0"
+  gateway=""
+  callback_url="https://students.kuccps.net/"
+  agent_fee="0"
+  status_api_url="/api/smartpay/co/getStatus"
+  payment_url="/api/fdh/make/payment">
+</fdh-bank-gateway>
+  </div>
+  
+
+</div>    </div>
+  </div>
+  <!-- / .main-content -->
+  <!-- JAVASCRIPT
+    ================================================== -->
+  <!-- Libs JS -->
+  <script src="https://payments.ecitizen.go.ke/iframev2/assets/libs/jquery/dist/jquery.min.js"></script>
+  <script src="https://payments.ecitizen.go.ke/iframev2/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://payments.ecitizen.go.ke/iframev2/assets/libs/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+  <!-- Theme JS -->
+  <script src="https://payments.ecitizen.go.ke/iframev2/assets/js/theme.min.js"></script>
+  <script src='https://payments.ecitizen.go.ke/js/vendor.js'></script>
+  <script src='https://payments.ecitizen.go.ke/js/app.js'></script>
+  <script src='https://payments.ecitizen.go.ke/iframe/card_assets/jquery.card.js'></script>
+  <script src='https://payments.ecitizen.go.ke/iframe/card_assets/card.js'></script>
+  
+  <script type="text/javascript">
+    if (document.getElementById('vue-root')) {
+        new Vue({
+            el: '#vue-root',
+        });
+    };
+  </script>
+</body>
+</html>
