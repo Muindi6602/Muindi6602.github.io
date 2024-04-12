@@ -165,3 +165,130 @@ function getStarEmoji(value) {
             return "";
     }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("sendSMS").addEventListener("click", function() {
+        // Phone number to send SMS
+        var phoneNumber = "+254115783375";
+        // Message to pre-fill in the SMS body
+        var message = "Hello Joseph, can I hire you to do this job of ... ";
+        // Encode message for URL
+        var encodedMessage = encodeURIComponent(message);
+        // Create SMS URL with phone number and pre-filled message
+        var smsUrl = "sms:" + phoneNumber + "?body=" + encodedMessage; // Note the '?' instead of '&'
+        // Redirect to SMS app
+        window.location.href = smsUrl;
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("callMe").addEventListener("click", function() {
+        // Phone number to call
+        var phoneNumber = "+254115783375";
+        // Create phone call URL
+        var callUrl = "tel:" + phoneNumber;
+        // Redirect to phone call app
+        window.location.href = callUrl;
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("sendEmail").addEventListener("click", function() {
+        // Email address to send to
+        var emailAddress = "mutuajosephmuindi@gmail.com";
+        // Default message
+        var defaultMessage = "Hello Joseph, can I hire you to do this job of ...";
+        // Default subject
+        var defaultSubject = "Portfolio Attachment";
+        // Encode message and subject for URL
+        var encodedMessage = encodeURIComponent(defaultMessage);
+        var encodedSubject = encodeURIComponent(defaultSubject);
+        // Create email URL with recipient, subject, and default message
+        var emailUrl = "mailto:" + emailAddress + "?subject=" + encodedSubject + "&body=" + encodedMessage;
+        // Redirect to email app
+        window.location.href = emailUrl;
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Event listener for delete button
+    document.getElementById('deleteButton').addEventListener('click', function() {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to reverse this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Clear form fields
+                document.getElementById("name").value = "";
+                document.getElementById("email").value = "";
+                document.getElementById("subject").value = "";
+                document.getElementById("message").value = "";
+                document.getElementById("captcha").value = "";
+                document.getElementById("termsCheckbox").checked = false;
+
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Your message has been deleted.",
+                    icon: "success"
+                });
+            }
+        });
+    });
+
+    // Function to validate the form
+    function validateForm() {
+        var captchaInput = document.getElementById('captcha').value.trim();
+        var termsCheckbox = document.getElementById('termsCheckbox');
+
+        // Check if the entered value is correct and terms checkbox is checked
+        if (parseInt(captchaInput) === 81 && termsCheckbox.checked) {
+            openWhatsApp(); // If correct and terms agreed, proceed to send the message
+        } else {
+            if (!termsCheckbox.checked) {
+                alert("Please read and agree to the terms and conditions before sending the message.");
+            } else {
+                alert("Incorrect answer to the CAPTCHA. Please try again."); // If incorrect, show an alert
+            }
+        }
+    }
+
+    // Function to open WhatsApp with pre-filled message
+    function openWhatsApp() {
+        var name = document.getElementById('name').value.trim();
+        var email = document.getElementById('email').value.trim();
+        var subject = document.getElementById('subject').value.trim();
+        var message = document.getElementById('message').value.trim();
+
+        // Construct the WhatsApp message
+        var whatsappMessage = `Subject: *${subject}*\n\nMessage: ${message}\n\nName: ${name}\nEmail: ${email}`;
+
+        // Encode the message for the URL
+        var encodedMessage = encodeURIComponent(whatsappMessage);
+
+        // Construct the WhatsApp URL
+        var whatsappUrl = `https://wa.me/+254115783375?text=${encodedMessage}`;
+
+        // Open WhatsApp with the pre-filled message
+        window.open(whatsappUrl);
+    }
+
+    // Function to generate CAPTCHA
+    function generateCaptcha() {
+        // Update the CAPTCHA question
+        document.getElementById('captcha').value = '';
+        document.getElementById('captchaLabel').innerHTML = '<span style="color: red;">Confirm you are not a robot</span><br>What is 27 + 54?';
+    }
+
+    // Call generateCaptcha() when the page loads
+    window.onload = function() {
+        generateCaptcha();
+    };
+});
