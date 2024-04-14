@@ -7,51 +7,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Muindi-Bot-Md</title>
         <style>
-            a {
-                color: blue;
-                font-weight: bold;
-                text-decoration: underline;
-            .blue-text {
-        color: blue;
-            }
-            .red-link {
-                color: red;
-                font-weight: bold;
-                text-decoration: underline;
-            }
-            .footer {
-                position: fixed;
-                right: 0;
-                bottom: 0;
-                background-color: #f8f8f8;
-                color: #333;
-                padding: 1px;
-                width: 100%;
-                text-align: right;
-            }
-            .notification {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 20px;
-        background-color: #007bff;
-        color: white;
-        border-radius: 10px;
-        display: none;
-    }
 
-    @keyframes blink {
-        50% {
-            opacity: 0;
-        }
-    }
-
-.body {
+body {
     background-color: skyblue;
 }
 
-.header {
+header {
     font-family: 'Times New Roman';
     letter-spacing: 20px;
     color: green;
@@ -61,7 +22,7 @@
     background-color: white;
 }
 
-.div {
+div {
     color: blue;
     background-color: grey;
     width: auto;
@@ -125,10 +86,48 @@ div:hover {
     text-align: center;
     padding: 10px;
 }
-              
-    </style>
 
-<link rel="stylesheet" href="style.css">
+            a {
+                color: blue;
+                font-weight: bold;
+                text-decoration: underline;
+            .blue-text {
+        color: blue;
+            }
+            .red-link {
+                color: red;
+                font-weight: bold;
+                text-decoration: underline;
+            }
+            .footer {
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                background-color: #f8f8f8;
+                color: #333;
+                padding: 1px;
+                width: 100%;
+                text-align: right;
+            }
+            .notification {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: #007bff;
+        color: white;
+        border-radius: 10px;
+        display: none;
+    }
+
+    @keyframes blink {
+        50% {
+            opacity: 0;
+        }
+    }
+  
+    </style>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
@@ -140,7 +139,7 @@ div:hover {
                 <li> Cyber-X Bot</li>
                 <li> Hermit-Md Bot</li>
                 <li> Raganork-Md</li>
-            </ol>    
+            </ol>
     <h3> [1.] Levanter Bot/ lyfe00011</h3>
     <h3>⚙️ Setup.</h3>
     <ol>
@@ -170,11 +169,11 @@ div:hover {
         <li>Now <a class="red-link" href="https://qr-hazel-alpha.vercel.app/koyeb" target="_blank">DEPLOY.</a></li>
     </ol>
     <br>
-    <h4>C. Check My Portfolio  <a href="https://muindi6602.github.io/" target="_blank">Here.</a><br><br>
-    <h4>D. Deploy Levanter Md on Termux using Ubuntu:</h4><br>
-    <ol>1. First above all, install Termux Apk. Click <a href="https://termux.en.uptodown.com/android/post-download/106885413" target="_blank">Here</a> to download.
+    <h4>C. Check My Portfolio  <a href="https://muindi6602.github.io/" target="_blank">Here.</a><br>
+    <h4>D. Deploy on Ubuntu (Termux):</h4><br>
+    <ol>1. First above all, install Termux Apk into your Android/ Apple in the official store. Click <a href="https://github.com/termux/termux-app/releases/download/v0.118.0/termux-app_v0.118.0+github-debug_arm64-v8a.apk" target="_blank">Here</a> to download.
     <br><br>
-    2. Open Termux App info and Allow access to Files and Media:
+    2. Open Termux App info and Allow access to Files and Media, then give Storage and Battery Optimization Permission.
     <br><br>
     3. Install repo
     <br>
@@ -194,161 +193,170 @@ div:hover {
 
         </button>
     </div><br>
-    5. Update and upgrade Termux packages (Run command "y" if paused):
+    5. Run to Upgrades:
     <br>
     <div class="copy-link">
-        <input type="text" class="copy-link-input" value="apt update && apt upgrade -y" readonly>
+        <input type="text" class="copy-link-input" value="apt list --upgradable" readonly>
         <button type="button" class="copy-link-button">
             <span class="material-icons">content_copy</span>
 
         </button>
     </div><br>
-    6. Install required packages:
+    6. Update the pkg: (In a Pause case, run command "Y" for continuation and "N" for Default)
     <br>
     <div class="copy-link">
-        <input type="text" class="copy-link-input" value="pkg install wget openssl-tool proot -y" readonly>
+        <input type="text" class="copy-link-input" value="pkg update" readonly>
         <button type="button" class="copy-link-button">
             <span class="material-icons">content_copy</span>
 
         </button>
     </div><br>
-    7. Downloading ubuntu Setup file:
+    7. Install Wget:
     <br>
     <div class="copy-link">
-        <input type="text" class="copy-link-input" value="wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Ubuntu/ubuntu.sh" readonly>
+        <input type="text" class="copy-link-input" value="pkg install wget" readonly>
         <button type="button" class="copy-link-button">
             <span class="material-icons">content_copy</span>
 
         </button>
     </div><br>
-    8. Give the Executable Permission:
+    8. Install Debian:
     <br>
     <div class="copy-link">
-        <input type="text" class="copy-link-input" value="chmod +x *" readonly>
+        <input type="text" class="copy-link-input" value="pkg install wget -y ; wget https://raw.githubusercontent.com/wahasa/Debian/main/install.sh ; chmod +x install.sh ; ./install.sh" readonly>
         <button type="button" class="copy-link-button">
             <span class="material-icons">content_copy</span>
 
         </button>
     </div><br>
-    9. Run the Setup file. This setup process will take 10–15 minutes, depending on your internet speed:
+    9. Install Debian12:(It can take some time)
     <br>
     <div class="copy-link">
-        <input type="text" class="copy-link-input" value="./ubuntu.sh" readonly>
+        <input type="text" class="copy-link-input" value="Install Debian12" readonly>
         <button type="button" class="copy-link-button">
             <span class="material-icons">content_copy</span>
 
         </button>
     </div><br>
-    10. Run Ubuntu / Open Ubuntu:
+    10. start Debian:
     <br>
     <div class="copy-link">
-        <input type="text" class="copy-link-input" value="bash start-ubuntu.sh" readonly>
+        <input type="text" class="copy-link-input" value="debian" readonly>
         <button type="button" class="copy-link-button">
             <span class="material-icons">content_copy</span>
 
         </button>
     </div><br>
-    11. Install git, ffmpeg, and curl: Copy all the code below manualy;
-        <ol><br>
-            apt -y update && apt -y upgrade<br>apt -y install git ffmpeg curl
-        </ol><br>
-        
-    12. Install nodejs:
+    11. Install Wget on Debian: (Run "Y" if paused)
     <br>
     <div class="copy-link">
-        <input type="text" class="copy-link-input" value="curl -fsSl https://deb.nodesource.com/setup_lts.x | bash - && apt -y install nodejs" readonly>
+        <input type="text" class="copy-link-input" value="apt install wget" readonly>
         <button type="button" class="copy-link-button">
             <span class="material-icons">content_copy</span>
 
         </button>
     </div><br>
-    13. Update nodejs version:
+    12. Install with Script on Termux:
+    <br>
+    <div class="copy-link">
+        <input type="text" class="copy-link-input" value="wget -N -O levanter.sh https://raw.githubusercontent.com/weskerty/whatsapp-bot-md/master/LevanterTermux.sh && chmod +x levanter.sh && ./levanter.sh" readonly>
+        <button type="button" class="copy-link-button">
+            <span class="material-icons">content_copy</span>
+
+        </button>
+    </div><br>
+    13. Get a Session_ID from <a href="https://qr-hazel-alpha.vercel.app/session" style="color: red;" target="_blank">Levanter</a> and Run command "Y"
     <br><br>
     <div class="copy-link">
-        <input type="text" class="copy-link-input" value="npm install -g npm@10.5.1" readonly>
+        <input type="text" class="copy-link-input" value="y" readonly>
         <button type="button" class="copy-link-button">
             <span class="material-icons">content_copy</span>
 
         </button>
     </div><br>
-    14. Install yarn:
+    14. Follow the next instructions (Entering Session ID and Bot name):
     <br><br>
+    15. The above process can take long to complete:
+    <br><br>
+    16. After it's done, on Termux notification, click "Acquire Wakelock"
+    <br><br>
+    17. Then on the Deployment process on termux, click CTRL+C to Release the Keyboard:
+    <br><br>
+    18. Save your bot to folder:
     <div class="copy-link">
-        <input type="text" class="copy-link-input" value="npm install -g yarn" readonly>
+        <input type="text" class="copy-link-input" value="cd yourbotname" readonly>
         <button type="button" class="copy-link-button">
             <span class="material-icons">content_copy</span>
 
         </button>
     </div><br>
-    15. Install pm2:
-    <div class="copy-link">
-        <input type="text" class="copy-link-input" value="yarn global add pm2" readonly>
-        <button type="button" class="copy-link-button">
-            <span class="material-icons">content_copy</span>
-
-        </button>
-    </div><br><br>
-    16. Clone the repository and install packages (Replace "botName" your your preferred bot name in lowercase): Copy all manually
-        <ol><br>
-            git clone https://github.com/lyfe00011/whatsapp-bot-md botName<br>cd botName<br>yarn install --network-concurrency 1
-        </ol>
-    <br><br>
-    17. Enter Environment Variables: Copy-paste the lines below:
-        <ol>
-            <br>
-            echo "SESSION_ID = Session_Id<br>PREFIX = .<br>STICKER_PACKNAME = MuindiBot<br>ALWAYS_ONLINE = true<br>RMBG_KEY = null<br>LANGUAG = en<br>WARN_LIMIT = 1<br>FORCE_LOGOUT = false<br>BRAINSHOP = 159501,6pq8dPiYt7PdqHz3<br>MAX_UPLOAD = 200<br>REJECT_CALL = true<br>SUDO = 254115783375<br>TZ = Africa/Nairobi<br>VPS = true<br>AUTO_STATUS_VIEW = no-dl<br>SEND_READ = true<br>AJOIN = true<br>DISABLE_START_MESSAGE = false<br>PERSONAL_MESSAGE = null" > config.env
-        </ol>
-    <br><br>
-    18. Edit the config.env using nano if needed. To save, press Ctrl + O then press Enter, press Ctrl + X to exit.
-    <br><br>
-    19. Start the Bot: Replace botName with your actual bot name:
-    <div class="copy-link">
-        <input type="text" class="copy-link-input" value="pm2 start . --name botName --attach --time" readonly>
-        <button type="button" class="copy-link-button">
-            <span class="material-icons">content_copy</span>
-
-        </button>
-    </div><br>
-    20. Click acquire Wakelock in the Termux notification to enable it run in background. Exit both the ubuntu & Termux
-        <br><br>
-    21. After closing, open Termux again and navigate to Ubuntu:
+    19. Edit Bot preferences:
         <br>
     <div class="copy-link">
-        <input type="text" class="copy-link-input" value="bash start-ubuntu.sh" readonly>
+        <input type="text" class="copy-link-input" value="nano config.env" readonly>
         <button type="button" class="copy-link-button">
             <span class="material-icons">content_copy</span>
 
         </button>
     </div><br>
-    22. Open your bot folder
-        <br>
-    <div class="copy-link">
-        <input type="text" class="copy-link-input" value="cd botName" readonly>
-        <button type="button" class="copy-link-button">
-            <span class="material-icons">content_copy</span>
-
-        </button>
-    </div><br>
-    
-    23. Start the bot:(Do the necessary replacements):
+    20. Edit and paste these in the config.env:
+    <br>
+    <ol><br>
+        SESSION_ID = 12_5_ach768_09eft<br>PREFIX = .<br>STICKER_PACKNAME = MuindiBot<br>ALWAYS_ONLINE = true<br>RMBG_KEY = null<br>LANGUAG = en<br>WARN_LIMIT = 1<br>FORCE_LOGOUT = false<br>BRAINSHOP = 159501,6pq8dPiYt7PdqHz3<br>MAX_UPLOAD = 200<br>REJECT_CALL = true<br>SUDO = 254115783375<br>TZ = Africa/Nairobi<br>VPS = true<br>AUTO_STATUS_VIEW = no-dl<br>SEND_READ = true<br>AJOIN = true<br>DISABLE_START_MESSAGE = false<br>PERSONAL_MESSAGE = null
+    </ol><br>
+<br>
+    21. Click CTRL+O to save && CTRL+X to Exit the config.env:
+    <br><br>
+    22. Exit Debian:
         <br>
         <div class="copy-link">
-        <input type="text" class="copy-link-input" value="pm2 start . --name botName --attach --time" readonly>
+        <input type="text" class="copy-link-input" value="exit" readonly>
         <button type="button" class="copy-link-button">
             <span class="material-icons">content_copy</span>
 
         </button>
     </div><br>
         
-    24. Stop bot:(Incase you wanna stop it):
+    23. Exit Termux:
     <br>
     <div class="copy-link">
-        <input type="text" class="copy-link-input" value="pm2 stop botName" readonly>
+        <input type="text" class="copy-link-input" value="exit" readonly>
         <button type="button" class="copy-link-button">
             <span class="material-icons">content_copy</span>
 
         </button>
     </div><br>
+    24. After Exiting Termux app, open it again/start and paste this:
+    <br>
+    <div class="copy-link">
+        <input type="text" class="copy-link-input" value="debian" readonly>
+        <button type="button" class="copy-link-button">
+            <span class="material-icons">content_copy</span>
+
+        </button>
+    </div><br>
+    25. Open the Bot folder (Enter the botname you entered in number 14 above):
+        <br>
+        <div class="copy-link">
+            <input type="text" class="copy-link-input" value="cd botname" readonly>
+        <button type="button" class="copy-link-button">
+            <span class="material-icons">content_copy</span>
+
+        </button>
+        </div><br>
+    26. Start the Bot:
+        <br>
+        <div class="copy-link">
+            <input type="text" class="copy-link-input" value="pm2 start . --name yourbotname --attach --time" readonly>
+            <button type="button" class="copy-link-button">
+                <span class="material-icons">content_copy</span>
+    
+            </button>
+            
+        </div><br><br>
+
+    27. For <a href="https://youtu.be/Fsok59W_Dr4?si=u5Ai6JSlWQP7lNvZ" style="color: red;">YouTube</a> Tutorial:
+
     </b><br><br>
         <h3> [2.] Suhail Tech Bot (Heroku Deployment)</h3>
         <h3>⚙️ Setup.</h3>
