@@ -60,7 +60,7 @@ Simple deployment
    
              yarn global add pm2
 
-16. Clone the repository and install packages (Replace "botName" your your preferred bot name in lowercase):
+16. Clone the repository and install packages:
    
              git clone https://github.com/lyfe00011/whatsapp-bot-md botName
              cd botName
@@ -92,7 +92,7 @@ Simple deployment
 
 20. To save, press Ctrl + O then press Enter, press Ctrl + X to exit.
 
-21. Start the Bot: Replace botName with your actual bot name: {After this, your bot should start running}
+21. Start the Bot: {After this, your bot should start running}
     
             pm2 start . --name botName --attach --time
 
@@ -108,7 +108,7 @@ Simple deployment
     
             cd botName
 
-24. Start the bot:(Do the necessary replacements):
+24. Start the bot:
     
             pm2 start . --name botName --attach --time
 
