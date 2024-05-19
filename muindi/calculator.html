@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Muindi Calculator</title>
+  <link rel="icon" type="image/jpeg" href="https://i.ibb.co/SDS9LKW/muindi.jpg">
+
+  <style>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", "Noto Sans", "Helvetica", sans-serif;
+  font-size: 14px;
+  background-color: #3498DB;
+  height: 100%;
+}
+
+.calculator {
+  width: 350px;
+  height: auto;
+  margin: 70px auto 0;
+  overflow: hidden;
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+.calculator span {
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.top {
+  position: relative;
+  height: 150px;
+  background-color: white;
+}
+
+.top .unit {
+  text-transform: uppercase;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-weight: 700;
+  color: #757575;
+}
+
+.top .screen {
+  position: relative;
+  width: 100%;
+  top: 20%;
+  height: 80%;
+}
+
+.screen > div  {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 5px;
+  text-align: right;
+}
+
+.screen .input {
+  color: #757575;
+  height: 60%;
+  font-size: 35px;
+}
+
+.screen .result {
+  color: #9e9e9e;
+  font-size: 20px;
+  height: 40%;
+}
+
+.bottom {
+  background-color: #2D2D2D;
+  height: 300px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.bottom section {
+  position: relative;
+  height: 100%;
+  float: left;
+  display: flex;
+}
+
+.keys {
+  width: 80%;
+}
+
+
+.keys .column {
+  display: flex;
+  flex-grow: 1;
+}
+
+.keys .column, .operators {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.keys .column span, .operators span {
+  position: relative;
+  overflow: hidden;
+  flex-grow: 1;
+  width: 100%;
+  line-height: 1;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.5s;
+}
+
+.keys .column span {
+  font-size: 25px;
+}
+
+.keys .column span:hover, .operators span:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.operators {
+  width: 20%;
+  font-size: 18px;
+  background-color: #434343;
+}
+
+.delete {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.credit {
+  display: block;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 20px;
+  margin: 0 auto;
+}
+
+.credit a, .error {
+  color: #C2185B;
+}
+
+  </style>
+</head>
+<body>
+
+  <main class="calculator">
+
+    <div class="top">
+
+      <span class="unit">deg</span>
+      <section class="screen">
+        <div class="input"></div>
+        <div class="result"></div>
+      </section>
+
+    </div>
+
+    <div class="bottom">
+
+      <section class="keys">
+
+        <div class="column">
+          <span data-key="7">7</span>
+          <span data-key="4">4</span>
+          <span data-key="1">1</span>
+          <span data-key=".">.</span>
+        </div>
+
+        <div class="column">
+          <span data-key="8">8</span>
+          <span data-key="5">5</span>
+          <span data-key="2">2</span>
+          <span data-key="0">0</span>
+        </div>
+
+        <div class="column">
+          <span data-key="9">9</span>
+          <span data-key="6">6</span>
+          <span data-key="3">3</span>
+          <span class="equals-to" data-key="=">=</span>
+        </div>
+      </section>
+
+      <section class="operators">
+        <span class="delete">del</span>
+        <span data-key="÷">÷</span>
+        <span data-key="x">x</span>
+        <span data-key="-">-</span>
+        <span data-key="+">+</span>
+      </section>
+
+    </div>
+
+  </main>
+
+  <span class="credit">Chat me <a href="https://wa.me/254115783375">WhatsApp</a></span>
+
+  <script>
+"use strict";
+
+const input = document.querySelector(".input");
+const result = document.querySelector(".result");
+const deleteBtn = document.querySelector(".delete");
+const keys = document.querySelectorAll(".bottom span");
+
+let operation = "";
+let answer;
+let decimalAdded = false;
+
+const operators = ["+", "-", "x", "÷"];
+
+function handleKeyPress (e) {
+  const key = e.target.dataset.key;
+  const lastChar = operation[operation.length - 1];
+
+  if (key === "=") {
+    return;
+  }
+
+  if (key === "." && decimalAdded) {
+    return;
+  }
+
+  if (operators.indexOf(key) !== -1) {
+    decimalAdded = false;
+  }
+
+  if (operation.length === 0 && key === "-") {
+    operation += key;
+    input.innerHTML = operation;
+    return;
+  }
+
+  if (operation.length === 0 && operators.indexOf(key) !== -1) {
+    input.innerHTML = operation;
+    return;
+  }
+
+  if (operators.indexOf(lastChar) !== -1 && operators.indexOf(key) !== -1) {
+    operation = operation.replace(/.$/, key);
+    input.innerHTML = operation;
+    return;
+  }
+
+  if (key) {
+    if (key === ".") decimalAdded = true;
+    operation += key;
+    input.innerHTML = operation;
+    return;
+  }
+
+}
+
+function evaluate(e) {
+  const key = e.target.dataset.key;
+  const lastChar = operation[operation.length - 1];
+
+  if (key === "=" && operators.indexOf(lastChar) !== -1) {
+    operation = operation.slice(0, -1);
+  }
+
+  if (operation.length === 0) {
+    answer = "";
+    result.innerHTML = answer;
+    return;
+  }
+
+  try {
+
+    if (operation[0] === "0" && operation[1] !== "." && operation.length > 1) {
+      operation = operation.slice(1);
+    }
+
+    const final = operation.replace(/x/g, "*").replace(/÷/g, "/");
+    answer = +(eval(final)).toFixed(5);
+
+    if (key === "=") {
+      decimalAdded = false;
+      operation = `${answer}`;
+      answer = "";
+      input.innerHTML = operation;
+      result.innerHTML = answer;
+      return;
+    }
+
+    result.innerHTML = answer;
+
+  } catch (e) {
+    if (key === "=") {
+      decimalAdded = false;
+      input.innerHTML = `<span class="error">${operation}</span>`;
+      result.innerHTML = `<span class="error">Bad Expression</span>`;
+    }
+    console.log(e);
+  }
+
+}
+
+function clearInput (e) {
+
+  if (e.ctrlKey) {
+    operation = "";
+    answer = "";
+    input.innerHTML = operation;
+    result.innerHTML = answer;
+    return;
+  }
+
+  operation = operation.slice(0, -1);
+  input.innerHTML = operation;
+
+}
+
+deleteBtn.addEventListener("click", clearInput);
+keys.forEach(key => {
+  key.addEventListener("click", handleKeyPress);
+  key.addEventListener("click", evaluate);
+});
+    
+  </script>
+</body>
+</html>
