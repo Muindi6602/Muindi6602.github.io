@@ -50,7 +50,7 @@ Simple deployment
 
 13. Update nodejs version:
    
-             npm install -g npm@10.5.1
+             npm install -g npm@10.8.0
 
 14. Install yarn:
    
