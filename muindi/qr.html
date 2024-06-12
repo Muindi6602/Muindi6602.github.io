@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<!--- Created By JosehMuindi --->
 <html lang="en" dir="ltr">
-   <head>
-      <meta charset="utf-8">
-      <title>WhatsApp QR CODE</title>
-      <link rel="icon" type="image/jpeg" href="https://i.ibb.co/SDS9LKW/muindi.jpg">
+<head>
+    <meta charset="utf-8">
+    <title>WhatsApp QR CODE</title>
+    <link rel="icon" type="image/jpeg" href="https://i.ibb.co/SDS9LKW/muindi.jpg">
     <style>
         body {
             display: flex;
@@ -49,9 +48,9 @@
     </style>
 </head>
 <body>
-    <button id="showImageBtn">Genetate QR</button>
+    <button id="showImageBtn">Generate QR</button>
     <div class="image-container">
-        <img id="myImage" src="https://i.ibb.co/8nw0J3w/qr.jpg" alt="Your Image">
+        <img id="myImage" src="https://i.ibb.co/8nw0J3w/qr.jpg" alt="QR Code">
         <div id="countdown" class="countdown">QR Available in: 15 secs</div>
     </div>
     <script>
@@ -73,7 +72,13 @@
                     clearInterval(countdownInterval);
                     image.style.display = 'none';
                     button.style.display = 'block';
-                    countdown.style.display = 'none'; 
+                    countdown.style.display = 'none';
+
+                    // Hide the button after 2 seconds and redirect to main.html
+                    setTimeout(function() {
+                        button.style.display = 'none';
+                        window.location.href = 'main.html';
+                    }, 2000);
                 }
             }, 1000);
         });
