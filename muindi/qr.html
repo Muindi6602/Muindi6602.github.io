@@ -16,10 +16,30 @@
         }
 
         button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #28a745; /* Primary green color */
+    color: white;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838; /* Darker green for hover effect */
+}
+
+button:active {
+    background-color: #1e7e34; /* Even darker green for active state */
+    transform: scale(0.98); /* Slightly shrink button when clicked */
+}
+
+button:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.5); /* Add custom focus outline */
+}
+
 
         .image-container {
             position: relative;
