@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--- Created By JosehMuindi --->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>WhatsApp QR CODE</title>
+      <link rel="icon" type="image/jpeg" href="https://i.ibb.co/SDS9LKW/muindi.jpg">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .image-container {
+            position: relative;
+            width: 25%;
+            display: flex;
+            justify-content: center;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: none;
+        }
+
+        .countdown {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="showImageBtn">Get</button>
+    <div class="image-container">
+        <img id="myImage" src="https://i.ibb.co/GxrzjFp/wallpaper.jpg" alt="Your Image">
+        <div id="countdown" class="countdown">QR Available in: 15 secs</div>
+    </div>
+    <script>
+        document.getElementById('showImageBtn').addEventListener('click', function() {
+            var button = document.getElementById('showImageBtn');
+            var image = document.getElementById('myImage');
+            var countdown = document.getElementById('countdown');
+            var timeLeft = 15;
+
+            button.style.display = 'none';
+            image.style.display = 'block';
+            countdown.style.display = 'block';
+
+            var countdownInterval = setInterval(function() {
+                countdown.textContent = 'QR Available in: ' + timeLeft + ' secs';
+                timeLeft--;
+
+                if (timeLeft < 0) {
+                    clearInterval(countdownInterval);
+                    image.style.display = 'none';
+                    button.style.display = 'block';
+                    countdown.style.display = 'none'; 
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
