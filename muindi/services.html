@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muindi Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: pink;
+        }
+        .text-1 {
+            text-align: center;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 33%;
+            background-color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            z-index: 1;
+        }
+        .dropdown a {
+            display: block;
+            color: black;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-bottom: 1px solid #ddd;
+        }
+        .dropdown a:last-child {
+            border-bottom: none;
+        }
+        .dropdown a:hover {
+            background-color: #f1f1f1;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+    .flicker-border {
+        position: relative;
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: purple;
+        color: white;
+        font-size: 16px;
+        text-transform: uppercase;
+        border: 2px solid transparent;
+        border-radius: 5px;
+        overflow: hidden;
+        animation: flicker 1s infinite alternate;
+        text-decoration: none;
+    }
+
+    @keyframes flicker {
+        0% {
+            border-color: transparent;
+        }
+        50% {
+            border-color: red;
+        }
+        100% {
+            border-color: transparent;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="text-1">
+    
+        <a href="#" <button id="kuccps-link" class="flicker-border">Click here</button></a><br><br>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    <div class="dropdown" id="dropdown">
+        <a href="https://wa.me/254115783375?text=Hello%20Muindi,%20i%20need%20Hef%20and%20Helb%20application%20services,%20can%20you%20help%20me?" target="_blank">1. HEF & HELB</a>
+        <a href="https://wa.me/254115783375?text=Hello%20Muindi,%20i%20need%20a%20KRA%20Pin%20application%20services,%20can%20you%20help%20me?" target="_blank">2. KRA</a>
+        <a href="https://wa.me/254115783375?text=Hello%20Muindi,%20i%20need%20Kuccps%20application%20services,%20can%20you%20help%20me?" target="_blank">3. KUCCPS</a>
+        <a href="https://wa.me/254115783375?text=Hello%20Muindi,%20i%20need%20Kmtc%20application%20services,%20can%20you%20help%20me?" target="_blank">5. KMTC</a>
+        <a href="https://muindi6602.netlify.app/muindi/bots" target="_blank">6. BOTS</a>
+    </div>
+
+    <script>
+        document.getElementById('kuccps-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('dropdown').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        });
+
+        document.getElementById('overlay').addEventListener('click', function() {
+            document.getElementById('dropdown').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
