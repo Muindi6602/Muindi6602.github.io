@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muindi | Resize</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -20,6 +21,7 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative; /* Added */
         }
         .upload-box {
             border: 2px dashed #cccccc;
@@ -53,6 +55,14 @@
             display: block;
             margin: 20px auto;
         }
+        .whatsapp-icon {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 150%; /* Adjust the size as needed */
+            cursor: pointer;
+            color: #25D366;
+        }
     </style>
 </head>
 <body>
@@ -65,6 +75,8 @@
         </div>
         <img id="preview" src="" alt="">
         <button class="btn" id="resizeBtn" onclick="resizeImage()" disabled>Resize Image</button>
+        <!-- WhatsApp Icon -->
+        <i class="fab fa-whatsapp whatsapp-icon" onclick="sendWhatsAppMessage()"></i>
     </div>
 
     <script>
@@ -136,6 +148,13 @@
             document.getElementById('preview').style.display = 'none';  // Hide the preview image
             document.getElementById('resizeBtn').disabled = true;
             selectedFile = null;
+        }
+
+        function sendWhatsAppMessage() {
+            const phoneNumber = "+254115783375";
+            const message = "Hello Muindi, the resize web is helping me much. Thanks🤟♥";
+            const url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
         }
     </script>
 </body>
