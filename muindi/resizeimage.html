@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muindi | Resize</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .upload-box {
+            border: 2px dashed #cccccc;
+            border-radius: 10px;
+            padding: 30px;
+            background-color: #e6f7ff;
+            margin-bottom: 20px;
+            cursor: pointer;
+            position: relative;
+        }
+        .upload-box:hover {
+            background-color: #ccf2ff;
+        }
+        #selectImage {
+            display: none;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        #preview {
+            max-width: 100%;
+            max-height: 250px;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Muindi Resizer</h1>
+        <p>Easily resize images to 300*250px</p>
+        <div class="upload-box" onclick="document.getElementById('selectImage').click();">
+            <input type="file" id="selectImage" accept="image/*" onchange="loadImage(event)">
+            <p>click here or  drag and drop an image</p>
+        </div>
+        <img id="preview" src="" alt="">
+        <button class="btn" id="resizeBtn" onclick="resizeImage()" disabled>Resize Image</button>
+    </div>
+
+    <script>
+        let selectedFile;
+
+        function loadImage(event) {
+            selectedFile = event.target.files[0];
+            if (selectedFile) {
+                document.getElementById('resizeBtn').disabled = false;
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const preview = document.getElementById('preview');
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';  // Ensure the preview image is displayed
+                }
+                reader.readAsDataURL(selectedFile);
+            }
+        }
+
+        function resizeImage() {
+            if (!selectedFile) return;
+
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const img = new Image();
+                img.src = event.target.result;
+                img.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    const maxWidth = 300;  // Set max width for resizing
+                    const maxHeight = 250; // Set max height for resizing
+                    let width = img.width;
+                    let height = img.height;
+
+                    if (width > maxWidth) {
+                        height *= maxWidth / width;
+                        width = maxWidth;
+                    }
+
+                    if (height > maxHeight) {
+                        width *= maxHeight / height;
+                        height = maxHeight;
+                    }
+
+                    canvas.width = width;
+                    canvas.height = height;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, width, height);
+
+                    canvas.toBlob(function(blob) {
+                        const url = URL.createObjectURL(blob);
+                        const link = document.createElement('a');
+                        link.href = url;
+                        link.download = 'muindiresize.png';  // Default filename
+                        document.body.appendChild(link);  // Append to body to trigger click
+                        link.click();
+                        URL.revokeObjectURL(url);
+                        document.body.removeChild(link);  // Clean up
+
+                        reset();
+                    }, 'image/png');
+                }
+            }
+            reader.readAsDataURL(selectedFile);
+        }
+
+        function reset() {
+            document.getElementById('selectImage').value = '';
+            document.getElementById('preview').src = '';
+            document.getElementById('preview').style.display = 'none';  // Hide the preview image
+            document.getElementById('resizeBtn').disabled = true;
+            selectedFile = null;
+        }
+    </script>
+</body>
+</html>
