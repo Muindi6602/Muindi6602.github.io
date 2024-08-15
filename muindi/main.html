@@ -805,5 +805,25 @@ footer .bottom-details .bottom_text{
         })
     </script>
     <script src="script.js"></script>
+
+    <script>
+  // Function to detect if the device is a smartphone
+  function detectMobile() {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    // Check for common mobile device indicators in the user agent string
+    if (/android|avantgo|blackberry|iemobile|ipad|iphone|ipod|j2me|midp|mobile|nokia|palm|phone|p(ixi|re)\/|plucker|psp|symbian|up\.browser|up\.link|webos|wos/i.test(userAgent)) {
+      return true;
+    }
+
+    return false;
+  }
+
+  // Redirect if the user is on a mobile device
+  if (detectMobile()) {
+    alert("This website is not accessible on mobile devices. Please visit from a PC or laptop.");
+    window.location.href = "http://www.your-pc-only-website.com"; // Redirect to an alternate page or show a message
+  }
+    </script>
 </body>
 </html>
