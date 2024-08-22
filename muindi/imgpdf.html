@@ -121,16 +121,34 @@
                     pdf.addPage();
                 }
                 if (i === images.length - 1) {
-                    const fileHandle = await window.showSaveFilePicker({
-                        suggestedName: 'converted.pdf',
-                        types: [{
-                            description: 'PDF file',
-                            accept: { 'application/pdf': ['.pdf'] },
-                        }],
-                    });
-                    const writableStream = await fileHandle.createWritable();
-                    await writableStream.write(await pdf.output('blob'));
-                    await writableStream.close();
+                    // Check if showSaveFilePicker is available
+                    if ('showSaveFilePicker' in window) {
+                        try {
+                            const fileHandle = await window.showSaveFilePicker({
+                                suggestedName: 'converted.pdf',
+                                types: [{
+                                    description: 'PDF file',
+                                    accept: { 'application/pdf': ['.pdf'] },
+                                }],
+                            });
+                            const writableStream = await fileHandle.createWritable();
+                            await writableStream.write(await pdf.output('blob'));
+                            await writableStream.close();
+                        } catch (error) {
+                            console.error('File save failed:', error);
+                        }
+                    } else {
+                        // Fallback to Blob URL approach
+                        const pdfBlob = await pdf.output('blob');
+                        const url = URL.createObjectURL(pdfBlob);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = 'converted.pdf';
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                        URL.revokeObjectURL(url);
+                    }
                     clearUploads();
                 }
             };
