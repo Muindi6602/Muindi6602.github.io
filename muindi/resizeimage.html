@@ -21,7 +21,7 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            position: relative; /* Added */
+            position: relative;
         }
         .upload-box {
             border: 2px dashed #cccccc;
@@ -59,9 +59,18 @@
             position: absolute;
             top: 10px;
             left: 10px;
-            font-size: 150%; /* Adjust the size as needed */
+            font-size: 150%;
             cursor: pointer;
             color: #25D366;
+        }
+        /* PDF Converter Icon */
+        .pdf-icon {
+            position: absolute;
+            bottom: 10px;
+            right: 10px; /* Positioned at the right */
+            font-size: 150%; /* Adjust the size as needed */
+            cursor: pointer;
+            color: #D32F2F; /* Red color for PDF */
         }
     </style>
 </head>
@@ -71,12 +80,16 @@
         <p>Easily resize images to 300*250px</p>
         <div class="upload-box" onclick="document.getElementById('selectImage').click();">
             <input type="file" id="selectImage" accept="image/*" onchange="loadImage(event)">
-            <p>click here or  drag and drop an image</p>
+            <p>click here or drag and drop an image</p>
         </div>
         <img id="preview" src="" alt="">
         <button class="btn" id="resizeBtn" onclick="resizeImage()" disabled>Resize Image</button>
         <!-- WhatsApp Icon -->
         <i class="fab fa-whatsapp whatsapp-icon" onclick="sendWhatsAppMessage()"></i>
+        <!-- PDF Converter Icon -->
+        <a href="https://muindi6602.netlify.app">
+            <i class="fas fa-file-pdf pdf-icon"></i>
+        </a>
     </div>
 
     <script>
@@ -90,7 +103,7 @@
                 reader.onload = function(e) {
                     const preview = document.getElementById('preview');
                     preview.src = e.target.result;
-                    preview.style.display = 'block';  // Ensure the preview image is displayed
+                    preview.style.display = 'block';
                 }
                 reader.readAsDataURL(selectedFile);
             }
@@ -105,8 +118,8 @@
                 img.src = event.target.result;
                 img.onload = function() {
                     const canvas = document.createElement('canvas');
-                    const maxWidth = 300;  // Set max width for resizing
-                    const maxHeight = 250; // Set max height for resizing
+                    const maxWidth = 300;
+                    const maxHeight = 250;
                     let width = img.width;
                     let height = img.height;
 
@@ -129,11 +142,11 @@
                         const url = URL.createObjectURL(blob);
                         const link = document.createElement('a');
                         link.href = url;
-                        link.download = 'muindiresize.png';  // Default filename
-                        document.body.appendChild(link);  // Append to body to trigger click
+                        link.download = 'muindiresize.png';
+                        document.body.appendChild(link);
                         link.click();
                         URL.revokeObjectURL(url);
-                        document.body.removeChild(link);  // Clean up
+                        document.body.removeChild(link);
 
                         reset();
                     }, 'image/png');
@@ -145,7 +158,7 @@
         function reset() {
             document.getElementById('selectImage').value = '';
             document.getElementById('preview').src = '';
-            document.getElementById('preview').style.display = 'none';  // Hide the preview image
+            document.getElementById('preview').style.display = 'none';
             document.getElementById('resizeBtn').disabled = true;
             selectedFile = null;
         }
