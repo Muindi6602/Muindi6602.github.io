@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUINDI | PDF Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f0f8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-upload {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-color: #8e44ad;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 20px 0;
+        }
+
+        .image-preview {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .image-preview img {
+            max-width: 100px;
+            max-height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .btn-convert {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #8e44ad;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <p>Reformat a JPG, PNG, or other image to a PDF file in a few seconds.</p>
+    <input type="file" id="imageUpload" class="hidden" multiple accept="image/*">
+    <label for="imageUpload" class="btn-upload">Choose Image file</label>
+
+    <div class="image-preview" id="imagePreview"></div>
+
+    <button id="convertBtn" class="btn-convert hidden">Now convert to PDF</button>
+</div>
+
+<script>
+    const imageUpload = document.getElementById('imageUpload');
+    const imagePreview = document.getElementById('imagePreview');
+    const convertBtn = document.getElementById('convertBtn');
+
+    let images = [];
+
+    imageUpload.addEventListener('change', () => {
+        images = Array.from(imageUpload.files);
+        imagePreview.innerHTML = '';
+
+        images.forEach(file => {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                imagePreview.appendChild(img);
+            };
+            reader.readAsDataURL(file);
+        });
+
+        convertBtn.classList.remove('hidden');
+    });
+
+    convertBtn.addEventListener('click', async () => {
+        if (images.length === 0) return;
+
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF();
+
+        for (let i = 0; i < images.length; i++) {
+            const imgData = await getImageData(images[i]);
+            const img = new Image();
+            img.src = imgData;
+
+            img.onload = async () => {
+                const imgWidth = pdf.internal.pageSize.getWidth();
+                const imgHeight = (img.height * imgWidth) / img.width;
+                pdf.addImage(img, 'PNG', 0, 0, imgWidth, imgHeight);
+                if (i < images.length - 1) {
+                    pdf.addPage();
+                }
+                if (i === images.length - 1) {
+                    const fileHandle = await window.showSaveFilePicker({
+                        suggestedName: 'converted.pdf',
+                        types: [{
+                            description: 'PDF file',
+                            accept: { 'application/pdf': ['.pdf'] },
+                        }],
+                    });
+                    const writableStream = await fileHandle.createWritable();
+                    await writableStream.write(await pdf.output('blob'));
+                    await writableStream.close();
+                    clearUploads();
+                }
+            };
+        }
+    });
+
+    function getImageData(file) {
+        return new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                resolve(e.target.result);
+            };
+            reader.readAsDataURL(file);
+        });
+    }
+
+    function clearUploads() {
+        imagePreview.innerHTML = '';
+        images = [];
+        convertBtn.classList.add('hidden');
+        imageUpload.value = '';
+    }
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</body>
+</html>
