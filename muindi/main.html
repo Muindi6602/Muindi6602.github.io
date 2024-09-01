@@ -804,6 +804,18 @@ footer .bottom-details .bottom_text{
             event.preventDefault();
         })
     </script>
+
+    window.addEventListener('beforeunload', function (e) {
+    // Custom message for older browsers
+    var confirmationMessage = 'Do you really want to close the page?';
+    
+    // Modern browsers ignore this message but will still prompt the user
+    e.returnValue = confirmationMessage; 
+
+    // For compatibility with older browsers
+    return confirmationMessage;
+});
+
     <script src="script.js"></script>
 
     
