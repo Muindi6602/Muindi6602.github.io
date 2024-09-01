@@ -300,7 +300,37 @@ footer .bottom-details .bottom_text{
 
 .show {display: block;}
 
-</style>
+        /* Ad container */
+        .live-ad {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px; /* Adjust the size as needed */
+            background-color: white;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        /* Image */
+        .live-ad img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Close button */
+        .close-btn {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+            cursor: pointer;
+        }
+    </style>
     
 </head>
 <body>
@@ -824,6 +854,19 @@ window.addEventListener('beforeunload', function (e) {
     }
 });
 </script>
+
+    <div id="liveAd" class="live-ad">
+        <span class="close-btn">&times;</span>
+        <a href="https://www.betika.com/en-ke/" target="_blank">
+            <img src="https://i.imghippo.com/files/hetII1725190004.jpg" alt="Advertisement">
+        </a>
+    </div>
+
+    <script>
+        document.querySelector('.close-btn').addEventListener('click', function() {
+            document.getElementById('liveAd').style.display = 'none';
+        });
+    </script>
 
     <script src="script.js"></script>
 
