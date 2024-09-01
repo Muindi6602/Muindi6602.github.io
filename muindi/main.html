@@ -804,17 +804,26 @@ footer .bottom-details .bottom_text{
             event.preventDefault();
         })
     </script>
-
-    window.addEventListener('beforeunload', function (e) {
-    // Custom message for older browsers
-    var confirmationMessage = 'Do you really want to close the page?';
     
-    // Modern browsers ignore this message but will still prompt the user
-    e.returnValue = confirmationMessage; 
+<script>
+  let isFormDirty = false;
 
-    // For compatibility with older browsers
-    return confirmationMessage;
+// Example: Track changes in a form
+document.querySelectorAll('input, textarea, select').forEach(function(element) {
+    element.addEventListener('change', function() {
+        isFormDirty = true;
+    });
 });
+
+window.addEventListener('beforeunload', function (e) {
+    if (isFormDirty) {
+        // This custom message won't appear, but this will trigger the browser's default dialog
+        const confirmationMessage = 'You have unsaved changes. Do you really want to leave?';
+        e.returnValue = confirmationMessage; // For old browsers
+        return confirmationMessage; // For most browsers
+    }
+});
+</script>
 
     <script src="script.js"></script>
 
