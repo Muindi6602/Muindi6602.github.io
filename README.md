@@ -121,8 +121,7 @@ Simple deployment
 
 ### Thanks To
 
-- [Ndeleva](https://github.com/Ndelevamutua) for [Backend](https://github.com/Ndelevamutua/whatsapp)
-- [Muindi](https://github.com/muindi6602) for [Frontend](https://muindi6602.github.io/)
+- [Ndeleva](https://github.com/Ndelevamutua) for [Baileys](https://github.com/Ndelevamutua/whatsapp)
 
 ### Get me on:
 
