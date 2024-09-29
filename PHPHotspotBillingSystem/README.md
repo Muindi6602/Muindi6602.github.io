@@ -3,7 +3,7 @@
 Simple to use
 
 ## Setup
-1. Download this code (Muindi_wireless in Zip form and extract it (the Muindi_wireless folder) to Xampp folder/hotdocs directory.
+1. Download this code (Muindi_wireless) in Zip form and extract it (the Muindi_wireless folder) to Xampp folder/hotdocs directory.
 
 2. First, Open localhost/phpMyAdmin .
 
