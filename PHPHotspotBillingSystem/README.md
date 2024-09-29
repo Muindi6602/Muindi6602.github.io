@@ -1,4 +1,4 @@
-### A simple hotspot billing using PHP by Muindi
+### A Simple hotspot billing using PHP by Muindi
 
 Simple to use
 
