@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.live-chat-ad {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    perspective: 1000px;
+    transition: transform 0.5s, opacity 0.3s ease-in-out;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    display: none; /* Initially hidden */
+    z-index: 1000;
+}
+
+.chat-icon {
+    font-size: 30px;
+    color: #28a745;
+    margin-bottom: 20px;
+}
+
+.chat-text h2 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.chat-text p {
+    font-size: 1rem;
+    color: #555;
+    text-align: center;
+    line-height: 1.4;
+}
+
+
+.button_fancy_submit {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.button_fancy_submit:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #666;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+.close-button:hover {
+    color: #ff0000;
+}
