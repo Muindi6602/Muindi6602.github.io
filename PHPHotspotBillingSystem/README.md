@@ -16,7 +16,7 @@ Simple to use
 
 6. For he Admin Dashboard, click (in the login page of client), the settings icon in bottom right
 
-7. As Admin, you can spy into clients accounts by just using their phone numbers, this feature is available in the admin dashboard in the profile icon.Spy
+7. As Admin, you can spy into clients accounts by just using their phone numbers, this feature is available in the admin dashboard in the profile icon. Spy
 
 8. The default admin login details are: email = admin@gmail,com and password as 123456
 
