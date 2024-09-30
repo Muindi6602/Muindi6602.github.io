@@ -27,6 +27,13 @@ Simple to use
 
 12. Add and manage packages in the Admin dashboard
 
+
+
+<div align="center">
+  <img src="https://github.com/Muindi6602/Muindi6602.github.io/blob/main/muindi/images/muindi.jpg" alt="Muindi Image" width="500"/>
+</div>
+
+
 ### Thanks To
 
 - [Ndeleva](https://wa.me/254746193590) for Frontend
