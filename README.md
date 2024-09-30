@@ -118,7 +118,10 @@ Simple deployment
 
 
 
-<img src="https://github.com/Muindi6602/Muindi6602.github.io/blob/main/muindi/images/muindi.jpg" alt="Muindi Image" width="400"/>
+<div align="center">
+  <img src="https://github.com/Muindi6602/Muindi6602.github.io/blob/main/muindi/images/muindi.jpg" alt="Muindi Image" width="400"/>
+</div>
+
 
 
 ### Thanks To
