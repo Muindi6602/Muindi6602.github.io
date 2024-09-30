@@ -330,6 +330,46 @@ footer .bottom-details .bottom_text{
             color: #000;
             cursor: pointer;
         }
+        /* Modal styles */
+        .fancy-modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+        }
+
+        .fancy-modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+            text-align: center; /* Center the text */
+        }
+
+        .fancy-close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .fancy-close-button:hover,
+        .fancy-close-button:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .fancy-link {
+            color: blue;
+            text-decoration: underline;
+        }
     </style>
     
 </head>
@@ -343,7 +383,43 @@ footer .bottom-details .bottom_text{
             <ul class="menu">
                 <li><a href="#home" class="menu-btn">Home</a></li>
                 <li><a href="#about" class="menu-btn">About</a></li>
-                <li><a href="#Hotspot" class="menu-btn">Services</a></li>
+                <li> class="menu-btn" id="openModal">Hotspot</a></li>
+
+    <!-- Modal Structure -->
+    <div class="modal fancy-modal" id="myModal">
+        <div class="modal-content fancy-modal-content">
+            <span class="close-button fancy-close-button">&times;</span>
+            <p>Hello user, I got a Hotspot billing system using PHP, get it for <a href="your-link-here" class="fancy-link">free here</a>.</p>
+        </div>
+    </div>
+
+    <script>
+        // Get modal element
+        const modal = document.getElementById("myModal");
+
+        // Get open modal button
+        const modalBtn = document.getElementById("openModal");
+
+        // Get close button
+        const closeBtn = document.getElementsByClassName("fancy-close-button")[0];
+
+        // Listen for open click
+        modalBtn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // Listen for close click
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Listen for outside click
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
                 <li><a href="#servicess" class="menu-btn">Services</a></li>
                 <li><a href="#teams" class="menu-btn">Teams</a></li>
                 <li><a href="#contact" class="menu-btn">Contact</a></li>
