@@ -19,7 +19,7 @@ Simple to use
 
 8. As Admin, you can spy into clients accounts by just using their phone numbers, this feature is available in the admin dashboard in the profile icon. Spy
 
-9. The default admin login details are: email = admin@gmail.com and password as 123456
+9. The default admin login details are: admin@gmail.com and password as 123456
 
 10. For mpesa tool, use your keys as I've excluded them for a security purpose
 
