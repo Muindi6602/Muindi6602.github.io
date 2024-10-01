@@ -1,133 +1,45 @@
-### Levanter Md in Termux <Ubunt>
+### A POINT OF SALE-POS System using PHP by Muindi
 
-Simple deployment
+Simple to use
 
 ## Setup
-1. First above all, install Termux Apk. Click [Here](https://termux.en.uptodown.com/android/post-download/106885413) to download.
+1. Download this code (sms) in Zip form and extract it (the sms folder) to Xampp folder/hotdocs directory.
 
-2. Open Termux App info and Allow access to Files and Media:
+2. Secondly, open [localhost/phpMyAdmin](http://localhost/phpMyAdmin).
 
-3. Install repo
+3. Create a new database and name it sms_db.
 
-             pkg install root-repo
+4. import the database from the Database folder (sms_db.sql) and save.
 
-4. Install X11
+5. [localhost/sms](http://localhost/sms) is the default index which opens the login form of the staffs.
 
-             pkg install x11-repo
+6. No signup needed for a user to get started
 
-5. Update and upgrade Termux packages (Run command "y" if paused):
+7. This Stock Management System can be only accessed by 2 types of users which are the System Admins and Staff. The Admin User can access and manage all the pages, forms, and features do the web application does while the Staff Users have limited access only.
 
-             apt update && apt upgrade -y
+8. Default Admin Access Information use, [localhost/sms/admin](http://localhost/sms/admin) 
+Username: admin
+Password: admin123
 
-6. Install required packages:
+9. Stff details are in the Admin dashboard
 
-             pkg install wget openssl-tool proot -y
-   
-7. Downloading ubuntu Setup file:
+10. For mpesa tool, use your keys as I've excluded them for a security purpose
 
-             wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Ubuntu/ubuntu.sh
+11. For email services (password reset emails, use your credentials: create an app in your gmail account and extract the app password)
 
-8. Give the Executable Permission:
-   
-             chmod +x *
-
-9. Run the Setup file. This setup process will take 10–15 minutes, depending on your internet speed:
-   
-             ./ubuntu.sh
-
-10. Run Ubuntu / Open Ubuntu:
-   
-             bash start-ubuntu.sh
-
-11. Install git, ffmpeg, and curl:
-   
-             apt -y update && apt -y upgrade
-             apt -y install git ffmpeg curl
-    
-12. Install nodejs:
-   
-             curl -fsSl https://deb.nodesource.com/setup_lts.x | bash - && apt -y install nodejs
-
-13. Update nodejs version:
-   
-             npm install -g npm@10.8.0
-
-14. Install yarn:
-   
-             npm install -g yarn
-
-15. Install pm2:
-   
-             yarn global add pm2
-
-16. Clone the repository and install packages:
-   
-             git clone https://github.com/lyfe00011/whatsapp-bot-md botName
-             cd botName
-             yarn install --network-concurrency 1
-
-17. Obtain Session_ID from [Levanter](https://qr-hazel-alpha.vercel.app/session):
-
-18. Enter Environment Variables: Edit them to your preference:
-
-             echo "SESSION_ID = Session_Id
-             PREFIX = .
-             STICKER_PACKNAME = Muindi
-             ALWAYS_ONLINE = true
-             RMBG_KEY = null
-             LANGUAG = en
-             WARN_LIMIT = 1
-             FORCE_LOGOUT = false
-             BRAINSHOP = 159501,6pq8dPiYt7PdqHz3
-             MAX_UPLOAD = 200
-             REJECT_CALL = true
-             SUDO = 254739642355,254115783375
-             TZ = Africa/Nairobi
-             VPS = true
-             AUTO_STATUS_VIEW = no-dl
-             SEND_READ = true
-             AJOIN = true
-             DISABLE_START_MESSAGE = false
-             PERSONAL_MESSAGE = null" > config.env
-
-20. To save, press Ctrl + O then press Enter, press Ctrl + X to exit.
-
-21. Start the Bot: {After this, your bot should start running}
-    
-            pm2 start . --name botName --attach --time
-
- - You can leave it at this point, but if you want the bot to run even on offline mode: Do as below
-
-21. Click acquire Wakelock in the Termux notification to enable it run in background. Exit both the ubuntu & Termux
-
-22. After closing, open Termux again and navigate to Ubuntu:
-    
-            bash start-ubuntu.sh
-
-23. Open your bot folder:
-    
-            cd botName
-
-24. Start the bot:
-    
-            pm2 start . --name botName --attach --time
-
-25. Stop bot:(Incase you wanna stop it):
-    
-            pm2 stop botName
+12. Add and manage stock in the Admin dashboard
 
 
 
 <div align="center">
-  <img src="https://github.com/Muindi6602/Muindi6602.github.io/blob/main/muindi/images/muindi.jpg" alt="Muindi Image" width="400"/>
+  <img src="https://github.com/Muindi6602/Muindi6602.github.io/blob/main/muindi/images/muindi.jpg" alt="Muindi Image" width="500"/>
 </div>
-
 
 
 ### Thanks To
 
-- [Ndeleva](https://github.com/Ndelevamutua) for [Baileys](https://github.com/Ndelevamutua/whatsapp)
+- [Ndeleva](https://wa.me/254746193590) for Frontend
 
-### Get me on:
+### For complaints and features update, contact me on:
 
 - [WhatsApp](https://wa.me/254115783375)
