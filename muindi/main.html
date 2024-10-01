@@ -417,12 +417,6 @@ footer .bottom-details .bottom_text{
         modalHotspot.style.display = "none";
     }
 
-    window.onclick = function(event) {
-        if (event.target == modalHotspot) {
-            modalHotspot.style.display = "none";
-        }
-    }
-
     // POS Modal
     const modalPOS = document.getElementById("myModalPOS");
     const modalBtnPOS = document.getElementById("openModalPOS");
@@ -436,7 +430,11 @@ footer .bottom-details .bottom_text{
         modalPOS.style.display = "none";
     }
 
+    // Global event listener for outside click
     window.onclick = function(event) {
+        if (event.target == modalHotspot) {
+            modalHotspot.style.display = "none";
+        }
         if (event.target == modalPOS) {
             modalPOS.style.display = "none";
         }
