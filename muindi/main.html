@@ -420,43 +420,44 @@ footer .bottom-details .bottom_text{
             }
         }
     </script>
-                                <li><a href="javascript:void(0);" class="menu-btn" id="openModal">POS</a></li>
+<li><a href="javascript:void(0);" class="menu-btn" id="openModalPOS">POS</a></li>
 
-     <!-- Modal Structure -->
-    <div class="modal fancy-modal" id="myModal">
-        <div class="modal-content fancy-modal-content">
-            <span class="close-button fancy-close-button">&times;</span>
-            <p>Hello user, I got a Point of Sale-POS System using PHP, get it for free <a href="https://github.com/Muindi6602/Muindi6602.github.io/tree/main/sms" class="fancy-link">here</a>.</p>
-        </div>
+<!-- Modal Structure for POS -->
+<div class="modal fancy-modal" id="myModalPOS">
+    <div class="modal-content fancy-modal-content">
+        <span class="close-button fancy-close-button">&times;</span>
+        <p>Hello user, I got a Point of Sale-POS System using PHP, get it for free <a href="https://github.com/Muindi6602/Muindi6602.github.io/tree/main/sms" class="fancy-link">here</a>.</p>
     </div>
+</div>
 
-    <script>
-        // Get modal element
-        const modal = document.getElementById("myModal");
+<script>
+    // Get modal element
+    const modalPOS = document.getElementById("myModalPOS");
 
-        // Get open modal button
-        const modalBtn = document.getElementById("openModal");
+    // Get open modal button
+    const modalBtnPOS = document.getElementById("openModalPOS");
 
-        // Get close button
-        const closeBtn = document.getElementsByClassName("fancy-close-button")[0];
+    // Get close button
+    const closeBtnPOS = document.getElementsByClassName("fancy-close-button")[0];
 
-        // Listen for open click
-        modalBtn.onclick = function() {
-            modal.style.display = "block";
+    // Listen for open click
+    modalBtnPOS.onclick = function() {
+        modalPOS.style.display = "block";
+    }
+
+    // Listen for close click
+    closeBtnPOS.onclick = function() {
+        modalPOS.style.display = "none";
+    }
+
+    // Listen for outside click
+    window.onclick = function(event) {
+        if (event.target == modalPOS) {
+            modalPOS.style.display = "none";
         }
+    }
+</script>
 
-        // Listen for close click
-        closeBtn.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        // Listen for outside click
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
                 <li><a href="#services" class="menu-btn">Services</a></li>
                 <li><a href="#contact" class="menu-btn">Contact</a></li>
                 <li><a href="payment.html" class="menu-btn">Support</a></li>
