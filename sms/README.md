@@ -17,11 +17,11 @@ Simple to use
 
 7. This Stock Management System can be only accessed by 2 types of users which are the System Admins and Staff. The Admin User can access and manage all the pages, forms, and features do the web application does while the Staff Users have limited access only.
 
-8. Default Admin Access Information use, [localhost/sms/admin](http://localhost/sms/admin) 
+8. Default Admin Access Information use, [localhost/sms/admin](http://localhost/sms/admin) <br>
 Username: admin
-Password: admin123
+assword: admin123
 
-9. Stff details are in the Admin dashboard
+9. Staff details are in the Admin dashboard
 
 10. For mpesa tool, use your keys as I've excluded them for a security purpose
 
