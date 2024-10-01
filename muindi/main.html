@@ -383,46 +383,18 @@ footer .bottom-details .bottom_text{
             <ul class="menu">
                 <li><a href="#home" class="menu-btn">Home</a></li>
                 <li><a href="#about" class="menu-btn">About</a></li>
-                <li><a href="javascript:void(0);" class="menu-btn" id="openModal">Hotspot</a></li>
+                <!-- Hotspot Modal -->
+<li><a href="javascript:void(0);" class="menu-btn" id="openModalHotspot">Hotspot</a></li>
 
-     <!-- Modal Structure -->
-    <div class="modal fancy-modal" id="myModal">
-        <div class="modal-content fancy-modal-content">
-            <span class="close-button fancy-close-button">&times;</span>
-            <p>Hello user, I got a Hotspot billing system using PHP, get it for free <a href="https://github.com/Muindi6602/Muindi6602.github.io/tree/main/PHPHotspotBillingSystem" class="fancy-link">here</a>.</p>
-        </div>
+<div class="modal fancy-modal" id="myModalHotspot">
+    <div class="modal-content fancy-modal-content">
+        <span class="close-button fancy-close-button">&times;</span>
+        <p>Hello user, I got a Hotspot billing system using PHP, get it for free <a href="https://github.com/Muindi6602/Muindi6602.github.io/tree/main/PHPHotspotBillingSystem" class="fancy-link">here</a>.</p>
     </div>
-
-    <script>
-        // Get modal element
-        const modal = document.getElementById("myModal");
-
-        // Get open modal button
-        const modalBtn = document.getElementById("openModal");
-
-        // Get close button
-        const closeBtn = document.getElementsByClassName("fancy-close-button")[0];
-
-        // Listen for open click
-        modalBtn.onclick = function() {
-            modal.style.display = "block";
-        }
-
-        // Listen for close click
-        closeBtn.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        // Listen for outside click
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
+</div>
+                <!-- POS Modal -->
 <li><a href="javascript:void(0);" class="menu-btn" id="openModalPOS">POS</a></li>
 
-<!-- Modal Structure for POS -->
 <div class="modal fancy-modal" id="myModalPOS">
     <div class="modal-content fancy-modal-content">
         <span class="close-button fancy-close-button">&times;</span>
@@ -430,33 +402,48 @@ footer .bottom-details .bottom_text{
     </div>
 </div>
 
+
 <script>
-    // Get modal element
+        // Hotspot Modal
+    const modalHotspot = document.getElementById("myModalHotspot");
+    const modalBtnHotspot = document.getElementById("openModalHotspot");
+    const closeBtnHotspot = modalHotspot.querySelector(".close-button");
+
+    modalBtnHotspot.onclick = function() {
+        modalHotspot.style.display = "block";
+    }
+
+    closeBtnHotspot.onclick = function() {
+        modalHotspot.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modalHotspot) {
+            modalHotspot.style.display = "none";
+        }
+    }
+    // POS Modal
     const modalPOS = document.getElementById("myModalPOS");
-
-    // Get open modal button
     const modalBtnPOS = document.getElementById("openModalPOS");
-
-    // Get close button (specific to the current modal)
     const closeBtnPOS = modalPOS.querySelector(".close-button");
 
-    // Listen for open click
     modalBtnPOS.onclick = function() {
         modalPOS.style.display = "block";
     }
 
-    // Listen for close click
     closeBtnPOS.onclick = function() {
         modalPOS.style.display = "none";
     }
 
-    // Listen for outside click
     window.onclick = function(event) {
         if (event.target == modalPOS) {
             modalPOS.style.display = "none";
         }
     }
+
+
 </script>
+
 
 
                 <li><a href="#services" class="menu-btn">Services</a></li>
