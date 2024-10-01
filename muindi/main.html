@@ -437,8 +437,8 @@ footer .bottom-details .bottom_text{
     // Get open modal button
     const modalBtnPOS = document.getElementById("openModalPOS");
 
-    // Get close button
-    const closeBtnPOS = document.getElementsByClassName("fancy-close-button")[0];
+    // Get close button (specific to the current modal)
+    const closeBtnPOS = modalPOS.querySelector(".close-button");
 
     // Listen for open click
     modalBtnPOS.onclick = function() {
@@ -457,6 +457,7 @@ footer .bottom-details .bottom_text{
         }
     }
 </script>
+
 
                 <li><a href="#services" class="menu-btn">Services</a></li>
                 <li><a href="#contact" class="menu-btn">Contact</a></li>
