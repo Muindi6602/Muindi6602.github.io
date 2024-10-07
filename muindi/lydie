@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lydie - My Love</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #ff758c, #ff7eb3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            color: white;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: -webkit-linear-gradient(#ffb3b3, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .heart {
+            position: relative;
+            width: 100px;
+            height: 90px;
+            background: red;
+            margin: 0 auto;
+            transform: rotate(45deg);
+            animation: pulse 1.5s infinite;
+        }
+
+        .heart:before,
+        .heart:after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: red;
+            border-radius: 50%;
+        }
+
+        .heart:before {
+            top: -50px;
+            left: 0;
+        }
+
+        .heart:after {
+            left: 50px;
+            top: 0;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1) rotate(45deg);
+            }
+            50% {
+                transform: scale(1.1) rotate(45deg);
+            }
+            100% {
+                transform: scale(1) rotate(45deg);
+            }
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #ff5c8d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            animation: fadeIn 2s ease-in-out 1s;
+        }
+
+        button:hover {
+            background-color: #ff385c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>To Lydie, With Love</h1>
+        <p>You are the heart that keeps my love beating strong. Every moment with you is a treasure.</p>
+        <div class="heart"></div>
+        <button onclick="surprise()">Click for a surprise!</button>
+    </div>
+
+    <script>
+        function surprise() {
+            alert("Surprise, Lydie! I love you more than words can say 💖");
+        }
+    </script>
+</body>
+</html>
