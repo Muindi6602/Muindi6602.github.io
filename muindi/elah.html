@@ -110,7 +110,29 @@ body {
 .line4 {
     top: 65%;
 }
+     #open {
+            background-color: #FF6F61; /* Coral-like color */
+            color: #fff; /* White text color */
+            border: none;
+            padding: 12px 24px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+        }
 
+        #open:hover {
+            background-color: #FF4C4C; /* Darker coral for hover */
+            transform: translateY(-4px); /* 3D lift effect on hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Increases shadow on hover */
+        }
+
+        #open:active {
+            transform: translateY(2px); /* Press down effect */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow reduces on click */
+        }
 .open .flap {
     transform: rotatex(180deg);
     transition: transform 0.4s ease, z-index 0.6s;
