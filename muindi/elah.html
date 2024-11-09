@@ -316,48 +316,62 @@ body {
             document.addEventListener("DOMContentLoaded", function () {
     var envelope = document.getElementById("envelope");
     var btn_open = document.getElementById("open");
-    var btn_reset = document.getElementById("reset");
     var heading = document.querySelector(".valentine");
-    let audio = new Audio("elah.mp3")
-  
+
+    // Preload the audio and ensure it plays smoothly
+    let audio = new Audio("elah.mp3");
+    audio.preload = "auto";
+
     var isOpen = false;  // Variable to track the envelope state
-  
+
+    // Set event listeners on both the envelope and the button
     envelope.addEventListener("click", toggleEnvelope);
     btn_open.addEventListener("click", toggleEnvelope);
-    btn_reset.addEventListener("click", closeEnvelope);
-  
+
+    // Ensure audio plays without delay
+    audio.addEventListener("canplaythrough", () => {
+        if (isOpen) {
+            audio.play();
+        }
+    });
+
     function toggleEnvelope() {
-      if (!isOpen) {
-        audio.play();
-        // If the envelope is not open, open it
-        envelope.classList.add("open");
-        envelope.classList.remove("close");
-        heading.style.display = "block";
-        const jsConfetti = new JSConfetti()
-        jsConfetti.addConfetti({
-            emojis: ['❤️'],
-            emojiSize: 40,
-            confettiNumber: 200,
-          })
-        isOpen = true;
-      } else {
-        // If the envelope is open, close it
-        closeEnvelope();
-      }
+        if (!isOpen) {
+            // Play audio only once, when the envelope is opened
+            audio.play();
+
+            // Open the envelope and show the message
+            envelope.classList.add("open");
+            envelope.classList.remove("close");
+            heading.style.display = "block";
+
+            // Trigger confetti effect
+            const jsConfetti = new JSConfetti();
+            jsConfetti.addConfetti({
+                emojis: ['❤️'],
+                emojiSize: 40,
+                confettiNumber: 200,
+            });
+
+            isOpen = true;
+        } else {
+            // Close the envelope if it is open
+            closeEnvelope();
+        }
     }
-  
+
     function closeEnvelope() {
-      // Only close the envelope if it is open
-      if (isOpen) {
-        audio.pause();
-        envelope.classList.remove("open");
-        envelope.classList.add("close");
-        heading.style.display = "none";
-        isOpen = false;
-      }
+        if (isOpen) {
+            audio.pause();
+            audio.currentTime = 0; // Reset audio to the beginning
+            envelope.classList.remove("open");
+            envelope.classList.add("close");
+            heading.style.display = "none";
+            isOpen = false;
+        }
     }
-  });
-  
+});
+
         </script>
     </body>
 </html>
