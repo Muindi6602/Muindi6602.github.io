@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Elah</title>
-        <link href="index.css" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
-
-        <style>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Elah</title>
+    <link href="index.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+    <style>
+      
 *{
     margin: 0;
     padding: 0;
@@ -286,92 +285,148 @@ body {
         min-width: 120px;
     }
 }
-        </style>
+        /* Lyrics section styles */
+        .lyrics-container {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 1.5em;
+            color: blueviolet; /* Light pink text */
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            animation: fadeInOut 6s ease-in-out infinite; /* Animation effect */
+        }
 
+        @keyframes fadeInOut {
+            0%, 16.6% { opacity: 0; }
+            16.6%, 83.3% { opacity: 1; }
+            83.3%, 100% { opacity: 0; }
+        }
 
-    </head>
-    <body>
-        <h1 class="valentine">Will You Be My Love?❤️</h1>
-        <div class="envelope-wrapper">
-            <div id="envelope" class="close">
-                <div class="front flap"></div>
-                <div class="front pocket"></div>
-                <div class="letter">
-                    <p class="words line1">Hello Elah</p>
-                    <p class="words line2">A perl to keep</p>
-                    <p class="words line3">I Love,</p>
-                    <p class="words line4">You❤️🥰</p>
-                </div>
-                <div class="hearts">
-                    <div class="heart a1"></div>
-                    <div class="heart a2"></div>
-                    <div class="heart a3"></div>
-                </div>
+        /* Added custom button styles for a unique look */
+        #open {
+            background-color: #FF6F61;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        #open:hover {
+            background-color: #FF4C4C;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        #open:active {
+            transform: translateY(2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <h2 class="valentine">Will You Be My Love?❤️</h2>
+    <div class="envelope-wrapper">
+        <div id="envelope" class="close">
+            <div class="front flap"></div>
+            <div class="front pocket"></div>
+            <div class="letter">
+                <p class="words line1">Hello Elah</p>
+                <p class="words line2">A perl to keep</p>
+                <p class="words line3">I Love</p>
+                <p class="words line4">You❤️😭</p>
+            </div>
+            <div class="hearts">
+                <div class="heart a1"></div>
+                <div class="heart a2"></div>
+                <div class="heart a3"></div>
             </div>
         </div>
-        <div class="reset">
-            <button id="open">OPEN</button>
-        </div>
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-    var envelope = document.getElementById("envelope");
-    var btn_open = document.getElementById("open");
-    var heading = document.querySelector(".valentine");
+    </div>
 
-    // Preload the audio and ensure it plays smoothly
-    let audio = new Audio("elah.mp3");
-    audio.preload = "auto";
+    <!-- Lyrics Container -->
+    <div class="lyrics-container" id="lyricsDisplay"></div>
+    <div class="reset">
+        <button id="open">OPEN</button>
+    </div>
 
-    var isOpen = false;  // Variable to track the envelope state
+    
 
-    // Set event listeners on both the envelope and the button
-    envelope.addEventListener("click", toggleEnvelope);
-    btn_open.addEventListener("click", toggleEnvelope);
-
-    // Ensure audio plays without delay
-    audio.addEventListener("canplaythrough", () => {
-        if (isOpen) {
-            audio.play();
-        }
-    });
-
-    function toggleEnvelope() {
-        if (!isOpen) {
-            // Play audio only once, when the envelope is opened
-            audio.play();
-
-            // Open the envelope and show the message
-            envelope.classList.add("open");
-            envelope.classList.remove("close");
-            heading.style.display = "block";
-
-            // Trigger confetti effect
-            const jsConfetti = new JSConfetti();
-            jsConfetti.addConfetti({
-                emojis: ['❤️'],
-                emojiSize: 40,
-                confettiNumber: 200,
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var envelope = document.getElementById("envelope");
+            var btn_open = document.getElementById("open");
+            var heading = document.querySelector(".valentine");
+            let audio = new Audio("elah.mp3");
+            audio.preload = "auto";
+            var isOpen = false;
+            envelope.addEventListener("click", toggleEnvelope);
+            btn_open.addEventListener("click", toggleEnvelope);
+            audio.addEventListener("canplaythrough", () => {
+                if (isOpen) {
+                    audio.play();
+                }
             });
+            function toggleEnvelope() {
+                if (!isOpen) {
+                    audio.play();
+                    envelope.classList.add("open");
+                    envelope.classList.remove("close");
+                    heading.style.display = "block";
+                    const jsConfetti = new JSConfetti();
+                    jsConfetti.addConfetti({
+                        emojis: ['❤️'],
+                        emojiSize: 40,
+                        confettiNumber: 200,
+                    });
+                    isOpen = true;
+                } else {
+                    closeEnvelope();
+                }
+            }
+            function closeEnvelope() {
+                if (isOpen) {
+                    audio.pause();
+                    audio.currentTime = 0;
+                    envelope.classList.remove("open");
+                    envelope.classList.add("close");
+                    heading.style.display = "none";
+                    isOpen = false;
+                }
+            }
 
-            isOpen = true;
-        } else {
-            // Close the envelope if it is open
-            closeEnvelope();
-        }
-    }
+            // Lyrics display functionality
+            const lyrics = [
+                "Baaaaabe❤️",
+                "Elah ml😭",
+                "10th was the Day",
+                "When you finally said yes😭❤️",
+                "I promise",
+                "To stay",
+                "To go with you",
+                "I cant wait to be with you beiby❤️🤗",
+                "For the rest of my life💍",
+                "Muindi loves you",
+                "and Muindi is here to stay ml😭"
+            ];
+            let currentLine = 0;
+            const lyricsDisplay = document.getElementById("lyricsDisplay");
 
-    function closeEnvelope() {
-        if (isOpen) {
-            audio.pause();
-            audio.currentTime = 0; // Reset audio to the beginning
-            envelope.classList.remove("open");
-            envelope.classList.add("close");
-            heading.style.display = "none";
-            isOpen = false;
-        }
-    }
-});
+            function displayLyrics() {
+                lyricsDisplay.textContent = lyrics[currentLine];
+                currentLine = (currentLine + 1) % lyrics.length;
+            }
 
-        </script>
-    </body>
+            displayLyrics(); // Initial display
+            setInterval(displayLyrics, 6000); // Update every 6 seconds (5 seconds on, 1 second off)
+        });
+    </script>
+</body>
 </html>
