@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lucy | Muindi</title>
+    <link href="index.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+    <style>
+      
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+body {
+    width: 100%;
+    height: auto;
+    background-color: pink;
+    background: url(./bg.jpeg) no-repeat center center/cover;
+}
+
+.envelope-wrapper {
+    width: 100%;
+    height: 380px;
+}
+
+#envelope {
+    position: relative;
+    height: 180px;
+    width: 280px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-left: auto; 
+    margin-right: auto; 
+    top: 50%;
+    background-color: #f65b55;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.437);
+    cursor: pointer;
+}
+
+.front {
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: 3;
+}
+
+.flap {
+    border-top: 98px solid #FF6863;
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent;
+    border-bottom: 82px solid transparent;
+    transform-origin: top;
+}
+
+.pocket {
+    border-left: 140px solid #FF8BA0;
+    border-right: 140px solid #FF8BA0;
+    border-bottom: 90px solid #FFA8B5;
+    border-top: 90px solid transparent;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.letter {
+    position: relative;
+    background-color: #f73f5b;
+    width: 90%;
+    height: 95%;
+    top: 5%;
+    border-radius: 10px;
+    box-shadow: 0 2px 26px rgba(0, 0, 0, .12);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.letter:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.words {
+    position: absolute;
+    left: 10%;
+    width: 80%;
+    height: 14%;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.line1 {
+    top: 15%;
+}
+.line2 {
+    top: 30%;
+}
+.line3 {
+    top: 50%;
+}
+.line4 {
+    top: 65%;
+}
+     #open {
+            background-color: #FF6F61; /* Coral-like color */
+            color: #fff; /* White text color */
+            border: none;
+            padding: 12px 24px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+        }
+
+        #open:hover {
+            background-color: #FF4C4C; /* Darker coral for hover */
+            transform: translateY(-4px); /* 3D lift effect on hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Increases shadow on hover */
+        }
+
+        #open:active {
+            transform: translateY(2px); /* Press down effect */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow reduces on click */
+        }
+.open .flap {
+    transform: rotatex(180deg);
+    transition: transform 0.4s ease, z-index 0.6s;
+    z-index: 1;
+}
+
+.close .flap {
+    transform: rotatex(0deg);
+    transition: transform 0.4s 0.6s ease, z-index 1s;
+    z-index: 5;
+}
+
+.open .letter {
+    transform: translatey(-80px);
+    transition: transform 0.4s 0.6s ease, z-index 0.6s;
+    z-index: 2;
+}
+
+.close .letter {
+    transform: translatey(0deg);
+    transition: transform 0.4s ease, z-index 1s;
+    z-index: 1;
+}
+
+.hearts {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.heart {
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+}
+
+.heart:before, .heart:after {
+    position: absolute;
+    content: "";
+    background: #d00000;
+    width: 50px;
+    height: 80px;
+    left: 50px;
+    top: 0;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.heart:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+.close .heart {
+    opacity: 0;
+    animation: none;
+}
+
+.a1 {
+    left: 20%;
+    transform: scale(0.6);
+    opacity: 1;
+    animation: slideUp 4s linear 1, sideSway 2s  ease-in-out 4 alternate;
+    animation-fill-mode: forwards;
+    animation-delay: 0.7s;
+}
+.a2 {
+    left: 55%;
+    transform: scale(1);
+    opacity: 1;
+    animation: slideUp 5s linear 1, sideSway 4s  ease-in-out 2 alternate;
+    animation-fill-mode: forwards;
+    animation-delay: 0.7s;
+}
+.a3 {
+    left: 10%;
+    transform: scale(0.8);
+    opacity: 1;
+    animation: slideUp 7s linear 1, sideSway 2s  ease-in-out 6 alternate;
+    animation-fill-mode: forwards;
+    animation-delay: 0.7s;
+}
+
+@keyframes slideUp {
+    0% {
+       top: 0;
+    }
+    100% {
+        top: -600px;
+    }
+}
+
+@keyframes sideSway {
+    0% {
+        margin-left: 0px;
+    }
+    100% {
+        margin-left: 50px;
+    }
+}
+
+.reset{
+    margin-top: 50px;
+}
+
+.reset button {
+    font-weight: 800;
+    margin: 15px;
+    transition: all 0.1s linear;
+    background-color: transparent;
+    border: solid 2px #FF6863;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+    padding: 12px;
+    text-decoration: none;
+    min-width: 150px;
+}
+
+.reset button:hover {
+    background-color: #f84a44;
+    cursor: pointer;
+}
+
+.valentine {
+    font-family: Arial, Helvetica, sans-serif;
+    color:#FF8BA0;
+    font-size: 50px;
+    display: none;
+}
+
+@media (max-width: 600px) {
+
+    body {
+        height: 100vh;
+        background: url(./bg.jpeg) no-repeat center center/cover;
+    }
+
+    .valentine {
+        font-size: 35px; 
+      }
+
+      .reset button {
+       margin: 10px;
+        font-size: 15px;
+        padding: 12px;
+        min-width: 120px;
+    }
+}
+        /* Lyrics section styles */
+        .lyrics-container {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 1.5em;
+            color: blueviolet; /* Light pink text */
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            animation: fadeInOut 6s ease-in-out infinite; /* Animation effect */
+        }
+
+        @keyframes fadeInOut {
+            0%, 16.6% { opacity: 0; }
+            16.6%, 83.3% { opacity: 1; }
+            83.3%, 100% { opacity: 0; }
+        }
+
+        /* Added custom button styles for a unique look */
+        #open {
+            background-color: #FF6F61;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        #open:hover {
+            background-color: #FF4C4C;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        #open:active {
+            transform: translateY(2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <h2 class="valentine">Lucy My Love❤️</h2>
+    <div class="envelope-wrapper">
+        <div id="envelope" class="close">
+            <div class="front flap"></div>
+            <div class="front pocket"></div>
+            <div class="letter">
+                <p class="words line1">Hello Lucy</p>
+                <p class="words line2">A perl to keep</p>
+                <p class="words line3">I Love</p>
+                <p class="words line4">You❤️😭</p>
+            </div>
+            <div class="hearts">
+                <div class="heart a1"></div>
+                <div class="heart a2"></div>
+                <div class="heart a3"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lyrics Container -->
+    <div class="lyrics-container" id="lyricsDisplay"></div>
+    <div class="reset">
+        <button id="open">OPEN</button>
+    </div>
+
+    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var envelope = document.getElementById("envelope");
+            var btn_open = document.getElementById("open");
+            var heading = document.querySelector(".valentine");
+            let audio = new Audio("elah.mp3");
+            audio.preload = "auto";
+            var isOpen = false;
+            envelope.addEventListener("click", toggleEnvelope);
+            btn_open.addEventListener("click", toggleEnvelope);
+            audio.addEventListener("canplaythrough", () => {
+                if (isOpen) {
+                    audio.play();
+                }
+            });
+            function toggleEnvelope() {
+                if (!isOpen) {
+                    audio.play();
+                    envelope.classList.add("open");
+                    envelope.classList.remove("close");
+                    heading.style.display = "block";
+                    const jsConfetti = new JSConfetti();
+                    jsConfetti.addConfetti({
+                        emojis: ['❤️'],
+                        emojiSize: 40,
+                        confettiNumber: 200,
+                    });
+                    isOpen = true;
+                } else {
+                    closeEnvelope();
+                }
+            }
+            function closeEnvelope() {
+                if (isOpen) {
+                    audio.pause();
+                    audio.currentTime = 0;
+                    envelope.classList.remove("open");
+                    envelope.classList.add("close");
+                    heading.style.display = "none";
+                    isOpen = false;
+                }
+            }
+
+            // Lyrics display functionality
+            const lyrics = [
+                "Baaaaabe❤️",
+                "Lucy ml😭",
+                "2nd was the Day",
+                "When you finally said yes😭❤️",
+                "I promise",
+                "To stay",
+                "To go with you",
+                "I cant wait to be with you beiby❤️🤗",
+                "For the rest of my life💍",
+                "Muindi loves you",
+                "and Muindi is here to stay ml😭"
+            ];
+            let currentLine = 0;
+            const lyricsDisplay = document.getElementById("lyricsDisplay");
+
+            function displayLyrics() {
+                lyricsDisplay.textContent = lyrics[currentLine];
+                currentLine = (currentLine + 1) % lyrics.length;
+            }
+
+            displayLyrics(); // Initial display
+            setInterval(displayLyrics, 6000); // Update every 6 seconds (5 seconds on, 1 second off)
+        });
+    </script>
+</body>
+</html>
