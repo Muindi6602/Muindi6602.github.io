@@ -370,15 +370,16 @@ footer .bottom-details .bottom_text{
             color: blue;
             text-decoration: underline;
         }
-        .canva-notification-container {
-      position: fixed;
-      top: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 1000;
-      display: none;
-      animation: canva-slide-down 0.5s ease;
-    }
+.canva-notification-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  display: none;
+  animation: canva-fade-in 0.5s ease;
+}
+
     .canva-notification {
       display: flex;
       align-items: center;
