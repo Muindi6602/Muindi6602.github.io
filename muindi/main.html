@@ -370,10 +370,96 @@ footer .bottom-details .bottom_text{
             color: blue;
             text-decoration: underline;
         }
-    </style>
+        .canva-notification-container {
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      display: none;
+      animation: canva-slide-down 0.5s ease;
+    }
+    .canva-notification {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #007bff;
+      color: #fff;
+      padding: 15px 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 90%;
+      width: 400px;
+    }
+    .canva-notification a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      margin-left: 15px;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 8px 15px;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+    .canva-notification a:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+    .canva-close-btn {
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 0;
+    }
+    @keyframes canva-slide-down {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -20%);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+    }
+  </style>
     
 </head>
 <body>
+  <div class="canva-notification-container" id="canva-notification">
+    <div class="canva-notification">
+      <span>I got a new portfolio update!</span>
+      <a href="https://josephmuindi.vercel.app/" target="_blank">View Now</a>
+      <button class="canva-close-btn" id="canva-close-btn">&times;</button>
+    </div>
+  </div>
+  
+  <script>
+    function showNotification() {
+      const notification = document.getElementById('canva-notification');
+      notification.style.display = 'block';
+  
+      // Auto-hide after 5 seconds
+      setTimeout(() => {
+        notification.style.display = 'none';
+      }, 10000);
+  
+      // Close on click outside
+      document.addEventListener('click', (event) => {
+        if (!notification.contains(event.target)) {
+          notification.style.display = 'none';
+        }
+      });
+    }
+  
+    document.getElementById('canva-close-btn').addEventListener('click', () => {
+      document.getElementById('canva-notification').style.display = 'none';
+    });
+  
+    // Show the notification on page load
+    window.onload = showNotification;
+  </script>
+  
     <div class="scroll-up-btn">
         <i class="fas fa-angle-up"></i>
     </div>
@@ -953,18 +1039,6 @@ window.addEventListener('beforeunload', function (e) {
 });
 </script>
 
-    <div id="liveAd" class="live-ad">
-        <span class="close-btn">&times;</span>
-        <a href="https://josephmuindi.vercel.app/" target="_blank">
-            <img src="https://i.ibb.co/5jMKqpz/portfolio.webp" alt="Advertisement">
-        </a>
-    </div>
-
-    <script>
-        document.querySelector('.close-btn').addEventListener('click', function() {
-            document.getElementById('liveAd').style.display = 'none';
-        });
-    </script>
 
     <script src="script.js"></script>
 
