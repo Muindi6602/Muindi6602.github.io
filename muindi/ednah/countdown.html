@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Ednah 💖 | Countdown</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .countdown {
+      margin: 50px 0;
+    }
+
+    #countdown-timer {
+      font-size: 2em;
+      margin-top: 20px;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="gallery.html">Chats</a></li>
+        <li><a href="quotes.html">Messages</a></li>
+        <li><a href="countdown.html">When?</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="countdown">
+    <h1>How long is the friendship</h1>
+    <div id="countdown-timer">
+      <span id="years"></span> Year(s)
+      <span id="months"></span> Month(s)
+      <span id="weeks"></span> Week(s)
+      <span id="days"></span> Day(s)
+      <br><br>
+      <p style="font-style: italic; font-size: small;">Although we've known each other for about a year, <br><br>our cherished friendship and bond has lasted for the above days, <br><br>and I hope it lasts forever😊</p>    </div>
+  </section>
+
+  <footer>
+    <p>Made with ❤️ by Joseh Muindi</p>
+  </footer>
+
+  <script>
+    function updateCountdown() {
+      const targetDate = new Date('2025-02-24');
+      const currentDate = new Date();
+
+      let timeDifference = currentDate - targetDate;
+
+      if (timeDifference < 0) {
+        timeDifference = 0;
+      }
+
+      const years = Math.floor(timeDifference / (1000 * 60 * 60 * 24 * 365));
+      timeDifference -= years * (1000 * 60 * 60 * 24 * 365);
+
+      const months = Math.floor(timeDifference / (1000 * 60 * 60 * 24 * 30));
+      timeDifference -= months * (1000 * 60 * 60 * 24 * 30);
+
+      const weeks = Math.floor(timeDifference / (1000 * 60 * 60 * 24 * 7));
+      timeDifference -= weeks * (1000 * 60 * 60 * 24 * 7);
+
+      const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
+      document.getElementById('years').innerText = years;
+      document.getElementById('months').innerText = months;
+      document.getElementById('weeks').innerText = weeks;
+      document.getElementById('days').innerText = days;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
